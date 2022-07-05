@@ -1,0 +1,47 @@
+[2022-06-26 14:12:39,313] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T14:02:33.883507+00:00 [queued]>
+[2022-06-26 14:12:39,324] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T14:02:33.883507+00:00 [queued]>
+[2022-06-26 14:12:39,324] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 14:12:39,324] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-06-26 14:12:39,324] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 14:12:39,341] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): generate_transaction> on 2022-06-26 14:02:33.883507+00:00
+[2022-06-26 14:12:39,347] {standard_task_runner.py:52} INFO - Started process 694 to run task
+[2022-06-26 14:12:39,352] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'generate_transaction', 'scheduled__2022-06-26T14:02:33.883507+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmpe5a0b_6u', '--error-file', '/tmp/tmplo2nt0h_']
+[2022-06-26 14:12:39,353] {standard_task_runner.py:80} INFO - Job 87: Subtask generate_transaction
+[2022-06-26 14:12:39,414] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T14:02:33.883507+00:00 [running]> on host 431a4ea2debb
+[2022-06-26 14:12:39,495] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=generate_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-26T14:02:33.883507+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-26T14:02:33.883507+00:00
+[2022-06-26 14:12:39,496] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-26 14:12:39,497] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/script_generation.py 31358']
+[2022-06-26 14:12:39,510] {subprocess.py:85} INFO - Output:
+[2022-06-26 14:12:40,293] {subprocess.py:92} INFO - /tmp/***tmphixc2sa7
+[2022-06-26 14:12:40,295] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 263, in <module>
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -     main()
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 252, in main
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -     subprocess.call(["hdfs", "dfs", "-put", f"{os.path.abspath(full_path)}", f"{file_name}"])
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -   File "/usr/local/lib/python3.7/subprocess.py", line 339, in call
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -     with Popen(*popenargs, **kwargs) as p:
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -   File "/usr/local/lib/python3.7/subprocess.py", line 800, in __init__
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -     restore_signals, start_new_session)
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -   File "/usr/local/lib/python3.7/subprocess.py", line 1551, in _execute_child
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO -     raise child_exception_type(errno_num, err_msg, err_filename)
+[2022-06-26 14:12:40,296] {subprocess.py:92} INFO - PermissionError: [Errno 13] Permission denied: 'hdfs'
+[2022-06-26 14:12:40,367] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-06-26 14:12:40,385] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-06-26 14:12:40,389] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=fraud_generation, task_id=generate_transaction, execution_date=20220626T140233, start_date=20220626T141239, end_date=20220626T141240
+[2022-06-26 14:12:40,406] {standard_task_runner.py:97} ERROR - Failed to execute job 87 for task generate_transaction (Bash command failed. The command returned a non-zero exit code 1.; 694)
+[2022-06-26 14:12:40,450] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-26 14:12:40,501] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

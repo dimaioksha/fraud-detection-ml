@@ -1,0 +1,35 @@
+[2022-06-26 15:03:09,563] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.check_hdfs scheduled__2022-06-26T14:58:08.605779+00:00 [queued]>
+[2022-06-26 15:03:09,573] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.check_hdfs scheduled__2022-06-26T14:58:08.605779+00:00 [queued]>
+[2022-06-26 15:03:09,573] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 15:03:09,573] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-06-26 15:03:09,573] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 15:03:09,588] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): check_hdfs> on 2022-06-26 14:58:08.605779+00:00
+[2022-06-26 15:03:09,594] {standard_task_runner.py:52} INFO - Started process 313 to run task
+[2022-06-26 15:03:09,605] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'check_hdfs', 'scheduled__2022-06-26T14:58:08.605779+00:00', '--job-id', '156', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmpa7eodd_g', '--error-file', '/tmp/tmpjdssx2mt']
+[2022-06-26 15:03:09,608] {standard_task_runner.py:80} INFO - Job 156: Subtask check_hdfs
+[2022-06-26 15:03:09,708] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.check_hdfs scheduled__2022-06-26T14:58:08.605779+00:00 [running]> on host e40375faaea0
+[2022-06-26 15:03:09,843] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=check_hdfs
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-26T14:58:08.605779+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-26T14:58:08.605779+00:00
+[2022-06-26 15:03:09,845] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-26 15:03:09,845] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'hdfs dfs -ls /user/hive']
+[2022-06-26 15:03:09,862] {subprocess.py:85} INFO - Output:
+[2022-06-26 15:03:09,866] {subprocess.py:92} INFO - bash: line 1: hdfs: command not found
+[2022-06-26 15:03:09,867] {subprocess.py:96} INFO - Command exited with return code 127
+[2022-06-26 15:03:09,891] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2022-06-26 15:03:09,897] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=fraud_generation, task_id=check_hdfs, execution_date=20220626T145808, start_date=20220626T150309, end_date=20220626T150309
+[2022-06-26 15:03:09,917] {standard_task_runner.py:97} ERROR - Failed to execute job 156 for task check_hdfs (Bash command failed. The command returned a non-zero exit code 127.; 313)
+[2022-06-26 15:03:09,945] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-26 15:03:10,017] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

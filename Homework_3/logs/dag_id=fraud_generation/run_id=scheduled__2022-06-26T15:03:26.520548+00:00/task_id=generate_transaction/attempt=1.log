@@ -1,0 +1,53 @@
+[2022-06-26 15:08:27,516] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T15:03:26.520548+00:00 [queued]>
+[2022-06-26 15:08:27,528] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T15:03:26.520548+00:00 [queued]>
+[2022-06-26 15:08:27,528] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 15:08:27,528] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-06-26 15:08:27,528] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 15:08:27,544] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): generate_transaction> on 2022-06-26 15:03:26.520548+00:00
+[2022-06-26 15:08:27,551] {standard_task_runner.py:52} INFO - Started process 131 to run task
+[2022-06-26 15:08:27,557] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'generate_transaction', 'scheduled__2022-06-26T15:03:26.520548+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmpqy61buab', '--error-file', '/tmp/tmpeuxq2wo2']
+[2022-06-26 15:08:27,558] {standard_task_runner.py:80} INFO - Job 163: Subtask generate_transaction
+[2022-06-26 15:08:27,627] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T15:03:26.520548+00:00 [running]> on host e40375faaea0
+[2022-06-26 15:08:27,719] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=generate_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-26T15:03:26.520548+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-26T15:03:26.520548+00:00
+[2022-06-26 15:08:27,721] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-26 15:08:27,721] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/script_generation.py 7519']
+[2022-06-26 15:08:27,734] {subprocess.py:85} INFO - Output:
+[2022-06-26 15:08:28,658] {subprocess.py:92} INFO - /tmp/***tmpjjv5dso2
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 258, in <module>
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -     main()
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 251, in main
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -     transactions_df.to_parquet(full_path)
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 207, in wrapper
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -     return func(*args, **kwargs)
+[2022-06-26 15:08:28,660] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 2685, in to_parquet
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -     **kwargs,
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/io/parquet.py", line 423, in to_parquet
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -     **kwargs,
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/io/parquet.py", line 180, in write
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -     is_dir=partition_cols is not None,
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/io/parquet.py", line 102, in _get_path_or_handle
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -     path_or_handle, mode, is_text=False, storage_options=storage_options
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pandas/io/common.py", line 711, in get_handle
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO -     handle = open(handle, ioargs.mode)
+[2022-06-26 15:08:28,661] {subprocess.py:92} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/opt/***/dags/output_simulation/partition_7520.parquet'
+[2022-06-26 15:08:28,711] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-06-26 15:08:28,729] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-06-26 15:08:28,733] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=fraud_generation, task_id=generate_transaction, execution_date=20220626T150326, start_date=20220626T150827, end_date=20220626T150828
+[2022-06-26 15:08:28,749] {standard_task_runner.py:97} ERROR - Failed to execute job 163 for task generate_transaction (Bash command failed. The command returned a non-zero exit code 1.; 131)
+[2022-06-26 15:08:28,778] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-26 15:08:28,825] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

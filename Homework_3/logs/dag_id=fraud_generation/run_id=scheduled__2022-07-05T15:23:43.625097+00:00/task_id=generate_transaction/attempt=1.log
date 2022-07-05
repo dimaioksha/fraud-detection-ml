@@ -1,0 +1,31 @@
+[2022-07-05 15:29:05,876] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-07-05T15:23:43.625097+00:00 [queued]>
+[2022-07-05 15:29:05,893] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-07-05T15:23:43.625097+00:00 [queued]>
+[2022-07-05 15:29:05,893] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-05 15:29:05,893] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-07-05 15:29:05,893] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-05 15:29:05,927] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): generate_transaction> on 2022-07-05 15:23:43.625097+00:00
+[2022-07-05 15:29:05,938] {standard_task_runner.py:52} INFO - Started process 118 to run task
+[2022-07-05 15:29:05,950] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'generate_transaction', 'scheduled__2022-07-05T15:23:43.625097+00:00', '--job-id', '209', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmp0ffmbrou', '--error-file', '/tmp/tmpuaqy3txp']
+[2022-07-05 15:29:05,952] {standard_task_runner.py:80} INFO - Job 209: Subtask generate_transaction
+[2022-07-05 15:29:06,168] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.generate_transaction scheduled__2022-07-05T15:23:43.625097+00:00 [running]> on host 6b18936621ac
+[2022-07-05 15:29:06,489] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=generate_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-05T15:23:43.625097+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-05T15:23:43.625097+00:00
+[2022-07-05 15:29:06,491] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-05 15:29:06,492] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/script_generation.py 2919']
+[2022-07-05 15:29:06,533] {subprocess.py:85} INFO - Output:
+[2022-07-05 15:34:38,967] {local_task_job.py:221} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2022-07-05 15:34:38,974] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 118. PIDs of all processes in the group: [121, 118]
+[2022-07-05 15:34:38,974] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 118
+[2022-07-05 15:34:38,975] {taskinstance.py:1541} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-07-05 15:34:38,975] {subprocess.py:103} INFO - Sending SIGTERM signal to process group
+[2022-07-05 15:34:39,173] {process_utils.py:75} INFO - Process psutil.Process(pid=118, status='terminated', exitcode=0, started='15:29:05') (118) terminated with exit code 0
+[2022-07-05 15:34:39,181] {process_utils.py:75} INFO - Process psutil.Process(pid=121, status='terminated', started='15:29:05') (121) terminated with exit code None

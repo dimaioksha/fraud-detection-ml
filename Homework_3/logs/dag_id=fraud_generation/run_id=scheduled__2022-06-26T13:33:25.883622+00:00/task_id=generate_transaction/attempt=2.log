@@ -1,0 +1,40 @@
+[2022-06-26 13:56:08,217] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T13:33:25.883622+00:00 [queued]>
+[2022-06-26 13:56:08,252] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T13:33:25.883622+00:00 [queued]>
+[2022-06-26 13:56:08,253] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 13:56:08,253] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-06-26 13:56:08,253] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-26 13:56:08,358] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): generate_transaction> on 2022-06-26 13:33:25.883622+00:00
+[2022-06-26 13:56:08,395] {standard_task_runner.py:52} INFO - Started process 97 to run task
+[2022-06-26 13:56:08,439] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'generate_transaction', 'scheduled__2022-06-26T13:33:25.883622+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmprs5x016q', '--error-file', '/tmp/tmp9km1gv5x']
+[2022-06-26 13:56:08,453] {standard_task_runner.py:80} INFO - Job 40: Subtask generate_transaction
+[2022-06-26 13:56:08,877] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.generate_transaction scheduled__2022-06-26T13:33:25.883622+00:00 [running]> on host 431a4ea2debb
+[2022-06-26 13:56:09,310] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=generate_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-26T13:33:25.883622+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-26T13:33:25.883622+00:00
+[2022-06-26 13:56:09,312] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-26 13:56:09,313] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/script_generation.py 2580']
+[2022-06-26 13:56:09,380] {subprocess.py:85} INFO - Output:
+[2022-06-26 13:56:13,887] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-06-26 13:56:13,887] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 263, in <module>
+[2022-06-26 13:56:13,887] {subprocess.py:92} INFO -     main()
+[2022-06-26 13:56:13,887] {subprocess.py:92} INFO -   File "/opt/***/dags/script_generation.py", line 230, in main
+[2022-06-26 13:56:13,888] {subprocess.py:92} INFO -     os.mkdirs(DIR_OUTPUT, exist_ok=True)
+[2022-06-26 13:56:13,888] {subprocess.py:92} INFO - AttributeError: module 'os' has no attribute 'mkdirs'
+[2022-06-26 13:56:14,736] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-06-26 13:56:14,951] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-06-26 13:56:14,982] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=fraud_generation, task_id=generate_transaction, execution_date=20220626T133325, start_date=20220626T135608, end_date=20220626T135614
+[2022-06-26 13:56:15,139] {standard_task_runner.py:97} ERROR - Failed to execute job 40 for task generate_transaction (Bash command failed. The command returned a non-zero exit code 1.; 97)
+[2022-06-26 13:56:15,311] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-26 13:56:15,518] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
