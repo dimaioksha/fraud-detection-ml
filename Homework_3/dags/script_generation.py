@@ -233,8 +233,8 @@ def main():
     i = int(sys.argv[1])
     start_time = time.time()
     (customer_profiles_table, terminal_profiles_table, transactions_df)=\
-        generate_dataset(n_customers = 50000, 
-                         n_terminals = 10000, 
+        generate_dataset(n_customers = 5000, 
+                         n_terminals = 1000, 
                          nb_days=365, 
                          start_date="2018-04-01", 
                          r=5,
@@ -245,14 +245,19 @@ def main():
     end_time = time.time()
     delta = end_time - start_time
     str_time = time.strftime('%H:%M:%S', time.gmtime(delta))
-    file_name = f"partition_{i+1}.parquet"
-    full_path = os.path.join(DIR_OUTPUT, file_name)
 
-    transactions_df.to_parquet(full_path)
     hdfs_url = os.getenv("HDFS_NAMENODE_URL", "http://rc1b-dataproc-m-jql2kq7b7yud2rel.mdb.yandexcloud.net:9870")
     client = Client(hdfs_url)
 
-    client.upload(f"/user/airflow/{file_name}", f"{os.path.abspath(full_path)}", cleanup=True)
+    fileCount = client.content("/user/airflow/input_files")['fileCount']
+
+    file_name = f"partition_{fileCount}.parquet"
+
+    full_path = os.path.join(DIR_OUTPUT, file_name)
+
+    transactions_df.to_parquet(full_path)
+
+    client.upload(f"/user/airflow/input_files{file_name}", f"{os.path.abspath(full_path)}", cleanup=True)
 
 if __name__ == "__main__":
     main()

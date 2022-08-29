@@ -1,0 +1,35 @@
+[2022-08-07 20:04:38,234] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction manual__2022-08-07T20:04:36.664977+00:00 [queued]>
+[2022-08-07 20:04:38,244] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: fraud_generation.generate_transaction manual__2022-08-07T20:04:36.664977+00:00 [queued]>
+[2022-08-07 20:04:38,244] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-07 20:04:38,244] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-08-07 20:04:38,244] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-07 20:04:38,259] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): generate_transaction> on 2022-08-07 20:04:36.664977+00:00
+[2022-08-07 20:04:38,265] {standard_task_runner.py:52} INFO - Started process 180 to run task
+[2022-08-07 20:04:38,271] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'fraud_generation', 'generate_transaction', 'manual__2022-08-07T20:04:36.664977+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/fraud_generation_dag.py', '--cfg-path', '/tmp/tmpgk2w67lz', '--error-file', '/tmp/tmpwb110l3r']
+[2022-08-07 20:04:38,272] {standard_task_runner.py:80} INFO - Job 6: Subtask generate_transaction
+[2022-08-07 20:04:38,338] {task_command.py:370} INFO - Running <TaskInstance: fraud_generation.generate_transaction manual__2022-08-07T20:04:36.664977+00:00 [running]> on host 42f3319e71a2
+[2022-08-07 20:04:38,430] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=fraud_generation
+AIRFLOW_CTX_TASK_ID=generate_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-07T20:04:36.664977+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-07T20:04:36.664977+00:00
+[2022-08-07 20:04:38,432] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-08-07 20:04:38,433] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/script_generation.py 9685']
+[2022-08-07 20:04:38,445] {subprocess.py:85} INFO - Output:
+[2022-08-07 20:25:13,236] {subprocess.py:92} INFO - Time to generate customer profiles table: 0.11s
+[2022-08-07 20:25:13,245] {subprocess.py:92} INFO - Time to generate terminal profiles table: 0.013s
+[2022-08-07 20:25:13,246] {subprocess.py:92} INFO - Time to associate terminals to customers: 5.1s
+[2022-08-07 20:25:13,246] {subprocess.py:92} INFO - Time to generate transactions: 4.2e+02s
+[2022-08-07 20:25:13,246] {subprocess.py:92} INFO - Number of frauds from scenario 1: 2129
+[2022-08-07 20:25:13,246] {subprocess.py:92} INFO - Number of frauds from scenario 2: 181907
+[2022-08-07 20:25:13,246] {subprocess.py:92} INFO - Number of frauds from scenario 3: 9078
+[2022-08-07 20:25:14,028] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-08-07 20:25:14,098] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=fraud_generation, task_id=generate_transaction, execution_date=20220807T200436, start_date=20220807T200438, end_date=20220807T202514
+[2022-08-07 20:25:14,148] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-07 20:25:14,195] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
