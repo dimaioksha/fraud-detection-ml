@@ -1,0 +1,70 @@
+[2022-08-21 18:51:23,651] {processor.py:153} INFO - Started process (PID=15436) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:51:23,652] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py for tasks to queue
+[2022-08-21 18:51:23,653] {logging_mixin.py:115} INFO - [2022-08-21 18:51:23,653] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:51:23,663] {logging_mixin.py:115} INFO - [2022-08-21 18:51:23,662] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py", line 13, in <module>
+    from script_generation import main
+ModuleNotFoundError: No module named 'script_generation'
+[2022-08-21 18:51:23,663] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:51:23,701] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py took 0.055 seconds
+[2022-08-21 18:52:02,871] {processor.py:153} INFO - Started process (PID=15635) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:02,873] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py for tasks to queue
+[2022-08-21 18:52:02,874] {logging_mixin.py:115} INFO - [2022-08-21 18:52:02,874] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:02,881] {logging_mixin.py:115} INFO - [2022-08-21 18:52:02,880] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py", line 13, in <module>
+    from script_generation import main
+ModuleNotFoundError: No module named 'script_generation'
+[2022-08-21 18:52:02,881] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:02,904] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py took 0.036 seconds
+[2022-08-21 18:52:39,217] {processor.py:153} INFO - Started process (PID=15821) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:39,219] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py for tasks to queue
+[2022-08-21 18:52:39,219] {logging_mixin.py:115} INFO - [2022-08-21 18:52:39,219] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:39,226] {logging_mixin.py:115} INFO - [2022-08-21 18:52:39,225] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py", line 13, in <module>
+    from script_generation import main
+ModuleNotFoundError: No module named 'script_generation'
+[2022-08-21 18:52:39,226] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:52:39,247] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py took 0.033 seconds
+[2022-08-21 18:53:11,400] {processor.py:153} INFO - Started process (PID=16096) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:11,401] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py for tasks to queue
+[2022-08-21 18:53:11,401] {logging_mixin.py:115} INFO - [2022-08-21 18:53:11,401] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:11,408] {logging_mixin.py:115} INFO - [2022-08-21 18:53:11,407] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py", line 13, in <module>
+    from script_generation import main
+ModuleNotFoundError: No module named 'script_generation'
+[2022-08-21 18:53:11,408] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:11,428] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py took 0.031 seconds
+[2022-08-21 18:53:46,282] {processor.py:153} INFO - Started process (PID=16167) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:46,284] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py for tasks to queue
+[2022-08-21 18:53:46,285] {logging_mixin.py:115} INFO - [2022-08-21 18:53:46,285] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:46,292] {logging_mixin.py:115} INFO - [2022-08-21 18:53:46,291] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py", line 13, in <module>
+    from script_generation import main
+ModuleNotFoundError: No module named 'script_generation'
+[2022-08-21 18:53:46,292] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py
+[2022-08-21 18:53:46,321] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/fraud_generation_dag.py took 0.042 seconds

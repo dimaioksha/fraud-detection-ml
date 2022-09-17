@@ -1,0 +1,39 @@
+[2022-09-15 13:58:11,370] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-15T13:47:46.846803+00:00 [queued]>
+[2022-09-15 13:58:11,374] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-15T13:47:46.846803+00:00 [queued]>
+[2022-09-15 13:58:11,374] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 13:58:11,374] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-09-15 13:58:11,374] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 13:58:11,387] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-15 13:47:46.846803+00:00
+[2022-09-15 13:58:11,390] {standard_task_runner.py:52} INFO - Started process 11107 to run task
+[2022-09-15 13:58:11,393] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-15T13:47:46.846803+00:00', '--job-id', '233', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpsszfraqc', '--error-file', '/tmp/tmpy1klcga3']
+[2022-09-15 13:58:11,393] {standard_task_runner.py:80} INFO - Job 233: Subtask generate_data
+[2022-09-15 13:58:11,434] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-15T13:47:46.846803+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-15 13:58:11,475] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-15T13:47:46.846803+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-15T13:47:46.846803+00:00
+[2022-09-15 13:58:11,483] {logging_mixin.py:115} INFO - Time to generate customer profiles table: 0.007s
+[2022-09-15 13:58:11,488] {logging_mixin.py:115} INFO - Time to generate terminal profiles table: 0.0046s
+[2022-09-15 13:58:11,672] {logging_mixin.py:115} INFO - Time to associate terminals to customers: 0.18s
+[2022-09-15 13:58:21,438] {local_task_job.py:220} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2022-09-15 13:58:21,442] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 11107. PIDs of all processes in the group: [11107]
+[2022-09-15 13:58:21,442] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 11107
+[2022-09-15 13:58:21,442] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-15 13:58:38,845] {logging_mixin.py:115} INFO - Time to generate transactions: 2.7e+01s
+[2022-09-15 13:58:38,935] {logging_mixin.py:115} INFO - Number of frauds from scenario 1: 186
+[2022-09-15 13:58:41,936] {logging_mixin.py:115} INFO - Number of frauds from scenario 2: 18597
+[2022-09-15 13:58:46,168] {logging_mixin.py:115} INFO - Number of frauds from scenario 3: 9171
+[2022-09-15 13:58:46,168] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 13:58:46,168] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 13:58:46,350] {client.py:558} INFO - Uploading '/home/ubuntu/fraud-detection-ml/airflow/output_simulation/partition_67.parquet' to '/user/airflow/input_files/partition_67.parquet'.
+[2022-09-15 13:58:46,350] {client.py:1123} INFO - Listing '/user/airflow/input_files/partition_67.parquet'.
+[2022-09-15 13:58:46,355] {client.py:503} INFO - Writing to '/user/airflow/input_files/partition_67.parquet'.
+[2022-09-15 13:58:46,885] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-15 13:58:46,890] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=generate_data, execution_date=20220915T134746, start_date=20220915T135811, end_date=20220915T135846
+[2022-09-15 13:58:46,927] {process_utils.py:75} INFO - Process psutil.Process(pid=11107, status='terminated', exitcode=0, started='13:58:10') (11107) terminated with exit code 0

@@ -1,0 +1,185 @@
+[2022-08-21 19:09:33,797] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T18:59:13.291295+00:00 [queued]>
+[2022-08-21 19:09:33,804] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T18:59:13.291295+00:00 [queued]>
+[2022-08-21 19:09:33,804] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:09:33,804] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-21 19:09:33,805] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:09:33,824] {taskinstance.py:1397} INFO - Executing <Task(SparkSubmitOperatorXCom): clean_data> on 2022-08-21 18:59:13.291295+00:00
+[2022-08-21 19:09:33,826] {standard_task_runner.py:52} INFO - Started process 19995 to run task
+[2022-08-21 19:09:33,831] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-08-21T18:59:13.291295+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpnrqfy74k', '--error-file', '/tmp/tmp27zyianz']
+[2022-08-21 19:09:33,831] {standard_task_runner.py:80} INFO - Job 13: Subtask clean_data
+[2022-08-21 19:09:34,069] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T18:59:13.291295+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-21 19:09:34,135] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-21T18:59:13.291295+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-21T18:59:13.291295+00:00
+[2022-08-21 19:09:34,140] {base.py:68} INFO - Using connection ID 'spark_default' for task execution.
+[2022-08-21 19:09:34,142] {spark_submit.py:334} INFO - Spark-Submit cmd: spark-submit --master yarn --name arrow-spark --queue root.default /home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py
+[2022-08-21 19:09:35,951] {spark_submit.py:485} INFO - SLF4J: Class path contains multiple SLF4J bindings.
+[2022-08-21 19:09:35,952] {spark_submit.py:485} INFO - SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2022-08-21 19:09:35,952] {spark_submit.py:485} INFO - SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2022-08-21 19:09:35,952] {spark_submit.py:485} INFO - SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[2022-08-21 19:09:35,952] {spark_submit.py:485} INFO - SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+[2022-08-21 19:09:38,413] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,413 INFO spark.SparkContext: Running Spark version 3.0.3
+[2022-08-21 19:09:38,478] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,478 INFO resource.ResourceUtils: ==============================================================
+[2022-08-21 19:09:38,480] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,480 INFO resource.ResourceUtils: Resources for spark.driver:
+[2022-08-21 19:09:38,480] {spark_submit.py:485} INFO - 
+[2022-08-21 19:09:38,481] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,481 INFO resource.ResourceUtils: ==============================================================
+[2022-08-21 19:09:38,482] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,481 INFO spark.SparkContext: Submitted application: arrow-spark
+[2022-08-21 19:09:38,635] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,635 INFO spark.SecurityManager: Changing view acls to: ubuntu
+[2022-08-21 19:09:38,636] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,636 INFO spark.SecurityManager: Changing modify acls to: ubuntu
+[2022-08-21 19:09:38,636] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,636 INFO spark.SecurityManager: Changing view acls groups to:
+[2022-08-21 19:09:38,636] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,636 INFO spark.SecurityManager: Changing modify acls groups to:
+[2022-08-21 19:09:38,636] {spark_submit.py:485} INFO - 2022-08-21 19:09:38,636 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+[2022-08-21 19:09:39,066] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,054 INFO util.Utils: Successfully started service 'sparkDriver' on port 43291.
+[2022-08-21 19:09:39,128] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,128 INFO spark.SparkEnv: Registering MapOutputTracker
+[2022-08-21 19:09:39,194] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,192 INFO spark.SparkEnv: Registering BlockManagerMaster
+[2022-08-21 19:09:39,221] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,221 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2022-08-21 19:09:39,222] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,222 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2022-08-21 19:09:39,266] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,266 INFO spark.SparkEnv: Registering BlockManagerMasterHeartbeat
+[2022-08-21 19:09:39,289] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,289 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-40191bd8-02cf-45f7-b93d-d6369f68b41b
+[2022-08-21 19:09:39,323] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,323 INFO memory.MemoryStore: MemoryStore started with capacity 1643.3 MiB
+[2022-08-21 19:09:39,379] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,379 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+[2022-08-21 19:09:39,588] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,588 INFO util.log: Logging initialized @5165ms to org.sparkproject.jetty.util.log.Slf4jLog
+[2022-08-21 19:09:39,724] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,724 INFO server.Server: jetty-9.4.40.v20210413; built: 2021-04-13T20:42:42.668Z; git: b881a572662e1943a14ae12e7e1207989f218b74; jvm 1.8.0_312-8u312-b07-0ubuntu1~20.04-b07
+[2022-08-21 19:09:39,788] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,787 INFO server.Server: Started @5366ms
+[2022-08-21 19:09:39,893] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,893 INFO server.AbstractConnector: Started ServerConnector@47dd2743{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+[2022-08-21 19:09:39,894] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,893 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+[2022-08-21 19:09:39,924] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,924 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ea41253{/jobs,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,927] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,927 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@47a7e004{/jobs/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,928] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,928 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6e9124d5{/jobs/job,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,930] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,930 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1b01d57b{/jobs/job/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,930] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,930 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@fe5e58f{/stages,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,931] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,931 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6a648827{/stages/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,932] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,932 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@39c504f3{/stages/stage,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,934] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,933 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3b6c1b40{/stages/stage/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,934] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,934 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@29a6cbe2{/stages/pool,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,935] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,935 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2306606c{/stages/pool/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,936] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,936 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2afdebaf{/storage,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,937] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,936 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1cb402b0{/storage/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,937] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,937 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@325829af{/storage/rdd,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,938] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,938 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@a525f91{/storage/rdd/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,939] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,939 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@66b5a25f{/environment,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,940] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,940 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3352e4f3{/environment/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,940] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,940 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7247c71e{/executors,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,941] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,941 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@59bb3ded{/executors/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,942] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,942 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@75aa76a3{/executors/threadDump,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,944] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,943 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@59668584{/executors/threadDump/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,957] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,957 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ffb4f15{/static,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,958] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,958 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3d8d81d5{/,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,960] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,960 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@69deeb1{/api,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,961] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,961 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@d205dad{/jobs/job/kill,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,962] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,961 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7fc30b52{/stages/stage/kill,null,AVAILABLE,@Spark}
+[2022-08-21 19:09:39,966] {spark_submit.py:485} INFO - 2022-08-21 19:09:39,966 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:4040
+[2022-08-21 19:09:40,232] {spark_submit.py:485} INFO - 2022-08-21 19:09:40,232 WARN util.Utils: spark.executor.instances less than spark.dynamicAllocation.minExecutors is invalid, ignoring its setting, please update your configs.
+[2022-08-21 19:09:40,236] {spark_submit.py:485} INFO - 2022-08-21 19:09:40,235 INFO util.Utils: Using initial executors = 1, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+[2022-08-21 19:09:40,323] {spark_submit.py:485} INFO - 2022-08-21 19:09:40,323 INFO client.RMProxy: Connecting to ResourceManager at rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/10.129.0.19:8032
+[2022-08-21 19:09:40,555] {spark_submit.py:485} INFO - 2022-08-21 19:09:40,555 INFO client.AHSProxy: Connecting to Application History server at rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/10.129.0.19:10200
+[2022-08-21 19:09:40,708] {spark_submit.py:485} INFO - 2022-08-21 19:09:40,708 INFO yarn.Client: Requesting a new application from cluster with 2 NodeManagers
+[2022-08-21 19:09:41,359] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,359 INFO conf.Configuration: resource-types.xml not found
+[2022-08-21 19:09:41,360] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,360 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+[2022-08-21 19:09:41,378] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,377 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+[2022-08-21 19:09:41,378] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,378 INFO yarn.Client: Will allocate AM container, with 3456 MB memory including 384 MB overhead
+[2022-08-21 19:09:41,385] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,385 INFO yarn.Client: Setting up container launch context for our AM
+[2022-08-21 19:09:41,388] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,388 INFO yarn.Client: Setting up the launch environment for our AM container
+[2022-08-21 19:09:41,403] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,398 INFO yarn.Client: Preparing resources for our AM container
+[2022-08-21 19:09:41,456] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,456 INFO yarn.Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0003/pyspark.zip
+[2022-08-21 19:09:41,742] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,742 INFO yarn.Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.9-src.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0003/py4j-0.10.9-src.zip
+[2022-08-21 19:09:41,966] {spark_submit.py:485} INFO - 2022-08-21 19:09:41,966 INFO yarn.Client: Uploading resource file:/tmp/spark-18e415d7-e860-46ef-afb9-41bb33747a63/__spark_conf__3248307835330355635.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0003/__spark_conf__.zip
+[2022-08-21 19:09:42,101] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,101 INFO spark.SecurityManager: Changing view acls to: ubuntu
+[2022-08-21 19:09:42,102] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,101 INFO spark.SecurityManager: Changing modify acls to: ubuntu
+[2022-08-21 19:09:42,102] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,101 INFO spark.SecurityManager: Changing view acls groups to:
+[2022-08-21 19:09:42,102] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,101 INFO spark.SecurityManager: Changing modify acls groups to:
+[2022-08-21 19:09:42,102] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,102 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+[2022-08-21 19:09:42,136] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,136 INFO yarn.Client: Submitting application application_1661098118612_0003 to ResourceManager
+[2022-08-21 19:09:42,244] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,244 INFO yarn.Client: Deleted staging directory hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0003
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,246 ERROR spark.SparkContext: Error initializing SparkContext.
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - org.apache.hadoop.yarn.exceptions.YarnException: Failed to submit application_1661098118612_0003 to YARN : Application application_1661098118612_0003 submitted by user ubuntu to unknown queue: root.default
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.submitApplication(YarnClientImpl.java:327)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:200)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:60)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:201)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:562)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2022-08-21 19:09:42,252] {spark_submit.py:485} INFO - at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at py4j.GatewayConnection.run(GatewayConnection.java:238)
+[2022-08-21 19:09:42,253] {spark_submit.py:485} INFO - at java.lang.Thread.run(Thread.java:748)
+[2022-08-21 19:09:42,317] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,317 INFO server.AbstractConnector: Stopped Spark@47dd2743{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+[2022-08-21 19:09:42,323] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,319 INFO ui.SparkUI: Stopped Spark web UI at http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:4040
+[2022-08-21 19:09:42,346] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,346 WARN cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+[2022-08-21 19:09:42,350] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,350 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+[2022-08-21 19:09:42,355] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,354 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+[2022-08-21 19:09:42,359] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,358 INFO cluster.YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+[2022-08-21 19:09:42,372] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,372 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2022-08-21 19:09:42,413] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,413 INFO memory.MemoryStore: MemoryStore cleared
+[2022-08-21 19:09:42,414] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,414 INFO storage.BlockManager: BlockManager stopped
+[2022-08-21 19:09:42,427] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,427 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+[2022-08-21 19:09:42,427] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,427 WARN metrics.MetricsSystem: Stopping a MetricsSystem that is not running
+[2022-08-21 19:09:42,429] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,429 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2022-08-21 19:09:42,458] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,458 INFO spark.SparkContext: Successfully stopped SparkContext
+[2022-08-21 19:09:42,458] {spark_submit.py:485} INFO - Traceback (most recent call last):
+[2022-08-21 19:09:42,458] {spark_submit.py:485} INFO - File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 82, in <module>
+[2022-08-21 19:09:42,463] {spark_submit.py:485} INFO - main()
+[2022-08-21 19:09:42,463] {spark_submit.py:485} INFO - File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 29, in main
+[2022-08-21 19:09:42,463] {spark_submit.py:485} INFO - spark = SparkSession.builder.master("yarn").getOrCreate()
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/pyspark/sql/session.py", line 186, in getOrCreate
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - sc = SparkContext.getOrCreate(sparkConf)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/pyspark/context.py", line 378, in getOrCreate
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - SparkContext(conf=conf or SparkConf())
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/pyspark/context.py", line 135, in __init__
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - self._do_init(master, appName, sparkHome, pyFiles, environment, batchSize, serializer,
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/pyspark/context.py", line 198, in _do_init
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - self._jsc = jsc or self._initialize_context(self._conf._jconf)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/pyspark/context.py", line 317, in _initialize_context
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - return self._jvm.JavaSparkContext(jconf)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1568, in __call__
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - : org.apache.hadoop.yarn.exceptions.YarnException: Failed to submit application_1661098118612_0003 to YARN : Application application_1661098118612_0003 submitted by user ubuntu to unknown queue: root.default
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.submitApplication(YarnClientImpl.java:327)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:200)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:60)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:201)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:562)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2022-08-21 19:09:42,464] {spark_submit.py:485} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2022-08-21 19:09:42,465] {spark_submit.py:485} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2022-08-21 19:09:42,465] {spark_submit.py:485} INFO - at py4j.GatewayConnection.run(GatewayConnection.java:238)
+[2022-08-21 19:09:42,465] {spark_submit.py:485} INFO - at java.lang.Thread.run(Thread.java:748)
+[2022-08-21 19:09:42,465] {spark_submit.py:485} INFO - 
+[2022-08-21 19:09:42,524] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,524 INFO util.ShutdownHookManager: Shutdown hook called
+[2022-08-21 19:09:42,525] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,525 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-18e415d7-e860-46ef-afb9-41bb33747a63
+[2022-08-21 19:09:42,545] {spark_submit.py:485} INFO - 2022-08-21 19:09:42,544 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-8ff88cea-96a4-4dd7-8c53-5bf67e4ce0dc
+[2022-08-21 19:09:42,932] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 38, in execute
+    super().execute(context)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 416, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --name arrow-spark --queue root.default /home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py. Error code is: 1.
+[2022-08-21 19:09:42,935] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220821T185913, start_date=20220821T190933, end_date=20220821T190942
+[2022-08-21 19:09:42,952] {standard_task_runner.py:92} ERROR - Failed to execute job 13 for task clean_data (Cannot execute: spark-submit --master yarn --name arrow-spark --queue root.default /home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py. Error code is: 1.; 19995)
+[2022-08-21 19:09:42,960] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-21 19:09:43,052] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

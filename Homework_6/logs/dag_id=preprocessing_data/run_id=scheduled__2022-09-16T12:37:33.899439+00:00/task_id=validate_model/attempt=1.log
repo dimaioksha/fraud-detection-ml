@@ -1,0 +1,63 @@
+[2022-09-16 12:52:42,488] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:37:33.899439+00:00 [queued]>
+[2022-09-16 12:52:42,493] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:37:33.899439+00:00 [queued]>
+[2022-09-16 12:52:42,493] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 12:52:42,493] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-16 12:52:42,493] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 12:52:42,509] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): validate_model> on 2022-09-16 12:37:33.899439+00:00
+[2022-09-16 12:52:42,514] {standard_task_runner.py:52} INFO - Started process 39686 to run task
+[2022-09-16 12:52:42,518] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'validate_model', 'scheduled__2022-09-16T12:37:33.899439+00:00', '--job-id', '338', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp7s34gc34', '--error-file', '/tmp/tmpje9ksrtn']
+[2022-09-16 12:52:42,519] {standard_task_runner.py:80} INFO - Job 338: Subtask validate_model
+[2022-09-16 12:52:42,570] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:37:33.899439+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-16 12:52:42,623] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=validate_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-16T12:37:33.899439+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-16T12:37:33.899439+00:00
+[2022-09-16 12:52:58,557] {logging_mixin.py:115} WARNING - 2022/09/16 12:52:58 INFO mlflow.spark: 'runs:/e9c0baa7f919475a9e63a5a6aa61bef7/model' resolved as 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/model'
+[2022-09-16 12:52:58,641] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-09-16 12:52:59,192] {logging_mixin.py:115} WARNING - 2022/09/16 12:52:59 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/model/sparkml' does not point to the current DFS.
+[2022-09-16 12:52:59,192] {logging_mixin.py:115} WARNING - 2022/09/16 12:52:59 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/model/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-16 12:53:00,400] {logging_mixin.py:115} WARNING - 2022/09/16 12:53:00 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/8013424c-2a99-4afd-81f3-71103f41310f
+[2022-09-16 12:53:13,898] {logging_mixin.py:115} WARNING - 2022/09/16 12:53:13 INFO mlflow.spark: 'runs:/e9c0baa7f919475a9e63a5a6aa61bef7/pipeline' resolved as 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/pipeline'
+[2022-09-16 12:53:14,564] {logging_mixin.py:115} WARNING - 2022/09/16 12:53:14 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/pipeline/sparkml' does not point to the current DFS.
+[2022-09-16 12:53:14,564] {logging_mixin.py:115} WARNING - 2022/09/16 12:53:14 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/e9c0baa7f919475a9e63a5a6aa61bef7/artifacts/pipeline/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-16 12:53:15,736] {logging_mixin.py:115} WARNING - 2022/09/16 12:53:15 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/27e4fa08-4b91-4c24-ad7f-74c14a0501fd
+[2022-09-16 12:53:54,523] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 1684, in create_block_manager_from_arrays
+    mgr = BlockManager(blocks, axes)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 149, in __init__
+    self._verify_integrity()
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 326, in _verify_integrity
+    raise construction_error(tot_items, block.shape[1:], self.axes)
+ValueError: Shape of passed values is (1, 2), indices imply (344276, 2)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 81, in validate_model
+    current_model_metric = _get_bootstraped_metric_for_model(model, transformed_test_df)
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 35, in _get_bootstraped_metric_for_model
+    df_bootstrap = pd.DataFrame({
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/frame.py", line 468, in __init__
+    mgr = init_dict(data, index, columns, dtype=dtype)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 283, in init_dict
+    return arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 93, in arrays_to_mgr
+    return create_block_manager_from_arrays(arrays, arr_names, axes)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 1688, in create_block_manager_from_arrays
+    raise construction_error(len(arrays), arrays[0].shape, axes, e)
+ValueError: Shape of passed values is (1, 2), indices imply (344276, 2)
+[2022-09-16 12:53:54,544] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=validate_model, execution_date=20220916T123733, start_date=20220916T125242, end_date=20220916T125354
+[2022-09-16 12:53:54,560] {standard_task_runner.py:92} ERROR - Failed to execute job 338 for task validate_model (Shape of passed values is (1, 2), indices imply (344276, 2); 39686)
+[2022-09-16 12:53:54,598] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-09-16 12:53:54,610] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

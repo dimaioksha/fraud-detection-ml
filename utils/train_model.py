@@ -11,6 +11,8 @@ import sys
 import os
 import logging
 from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.classification import RandomForestClassifier
+from pyspark.ml.classification import GBTClassifier
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
 import os
@@ -33,13 +35,15 @@ logger = logging.getLogger(__name__)
 
 
 def train_model(**kwargs):
-    mlflow.pyspark.ml.autolog()
 
     logger.info("GOT INTO TRAIN FUNCTION")
     ti = kwargs["ti"]
     name_of_file = ti.xcom_pull(task_ids="clean_data", key="data_path")
+    run_id = ti.xcom_pull(task_ids="clean_data", key="run_id_with_pipeline")
 
+    logger.info(f"Data path: {name_of_file}")
     spark = SparkSession.builder.appName("train_model").master("yarn").getOrCreate()
+    mlflow.pyspark.ml.autolog()
 
     df = spark.read.format("parquet").load(name_of_file)
 
@@ -47,24 +51,22 @@ def train_model(**kwargs):
     train_df = splits[0]
     test_df = splits[1]
 
-    with mlflow.start_run():
+    with mlflow.start_run(run_id=run_id):
 
-        lr = LogisticRegression(
-            featuresCol="featuresFinal",
-            labelCol="TX_FRAUD",
-            maxIter=10,
-            regParam=0.3,
-            elasticNetParam=0.8,
-        )
+        lr = GBTClassifier(featuresCol="featuresFinal", labelCol="TX_FRAUD")
 
         lr_model = lr.fit(train_df)
 
         predictions = lr_model.transform(test_df)
 
-        evaluator = BinaryClassificationEvaluator().setLabelCol("TX_FRAUD")
+        evaluator = BinaryClassificationEvaluator(
+            labelCol="TX_FRAUD",
+            rawPredictionCol="probability",
+            metricName="areaUnderROC",
+        )
         roc_auc = evaluator.evaluate(predictions)
 
-        mlflow.log_metric("accuracy", roc_auc)
+        mlflow.log_metric("ROC_AUC", roc_auc)
 
         logger.info(f"Accuracy SCORE: {roc_auc}")
 

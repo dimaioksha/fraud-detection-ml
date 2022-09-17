@@ -1,0 +1,57 @@
+[2022-08-29 09:43:58,557] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T09:27:45.298867+00:00 [queued]>
+[2022-08-29 09:43:58,562] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T09:27:45.298867+00:00 [queued]>
+[2022-08-29 09:43:58,563] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:43:58,563] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-08-29 09:43:58,563] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:43:58,578] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-29 09:27:45.298867+00:00
+[2022-08-29 09:43:58,583] {standard_task_runner.py:52} INFO - Started process 25547 to run task
+[2022-08-29 09:43:58,587] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'scheduled__2022-08-29T09:27:45.298867+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpu_2ftxuz', '--error-file', '/tmp/tmp1bptqoez']
+[2022-08-29 09:43:58,587] {standard_task_runner.py:80} INFO - Job 73: Subtask fit_model
+[2022-08-29 09:43:58,636] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T09:27:45.298867+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 09:43:58,682] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T09:27:45.298867+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-29T09:27:45.298867+00:00
+[2022-08-29 09:43:58,684] {logging_mixin.py:115} WARNING - 2022/08/29 09:43:58 INFO mlflow.pyspark.ml: No SparkSession detected. Autologging will log pyspark.ml models contained in the default allowlist. To specify a custom allowlist, initialize a SparkSession prior to calling mlflow.pyspark.ml.autolog() and specify the path to your allowlist file via the spark.mlflow.pysparkml.autolog.logModelAllowlistFile conf.
+[2022-08-29 09:43:58,685] {train_model.py:37} INFO - GOT INTO TRAIN FUNCTION
+[2022-08-29 09:44:21,415] {logging_mixin.py:115} WARNING - 2022/08/29 09:44:21 WARNING mlflow.pyspark.ml: Model inputs contain unsupported Spark data types: [StructField(featuresFinal,VectorUDT,true)]. Model signature is not logged.
+[2022-08-29 09:44:37,883] {logging_mixin.py:115} WARNING - 2022/08/29 09:44:37 WARNING mlflow.utils.autologging_utils: Encountered unexpected error during pyspark.ml autologging: 403 Client Error: Forbidden for url: https://storage.yandexcloud.net/otus-bigdata-dima-ioksha/1/efda8682dfdb47f3bcb8d705d05b2cd4/artifacts/model/python_env.yaml. Response text: <?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied</Message><Resource>/otus-bigdata-dima-ioksha/1/efda8682dfdb47f3bcb8d705d05b2cd4/artifacts/model/python_env.yaml</Resource><RequestId>b7b09c83bb1f9bdc</RequestId></Error>
+[2022-08-29 09:44:37,973] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 64, in train_model
+    roc_auc = evaluator.evaluate(predictions)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 555, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/pyspark/ml/__init__.py", line 1128, in patched_evaluate
+    metric = original(self, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 536, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 471, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 533, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+  File "/usr/lib/spark/python/pyspark/ml/evaluation.py", line 72, in evaluate
+    return self._evaluate(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/evaluation.py", line 102, in _evaluate
+    return self._java_obj.evaluate(dataset._jdf)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 134, in deco
+    raise_from(converted)
+  File "<string>", line 3, in raise_from
+pyspark.sql.utils.IllegalArgumentException: label does not exist. Available: featuresFinal, TX_FRAUD, rawPrediction, probability, prediction
+[2022-08-29 09:44:37,986] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220829T092745, start_date=20220829T094358, end_date=20220829T094437
+[2022-08-29 09:44:38,000] {standard_task_runner.py:92} ERROR - Failed to execute job 73 for task fit_model (label does not exist. Available: featuresFinal, TX_FRAUD, rawPrediction, probability, prediction; 25547)
+[2022-08-29 09:44:38,066] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-29 09:44:38,076] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

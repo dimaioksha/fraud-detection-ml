@@ -1,0 +1,353 @@
+[2022-08-21 19:39:16,638] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T19:29:13.291295+00:00 [queued]>
+[2022-08-21 19:39:16,643] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T19:29:13.291295+00:00 [queued]>
+[2022-08-21 19:39:16,643] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:39:16,643] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-21 19:39:16,644] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:39:16,658] {taskinstance.py:1397} INFO - Executing <Task(SparkSubmitOperatorXCom): clean_data> on 2022-08-21 19:29:13.291295+00:00
+[2022-08-21 19:39:16,661] {standard_task_runner.py:52} INFO - Started process 25876 to run task
+[2022-08-21 19:39:16,665] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-08-21T19:29:13.291295+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpj8rcdz8a', '--error-file', '/tmp/tmpqmlczmzv']
+[2022-08-21 19:39:16,665] {standard_task_runner.py:80} INFO - Job 20: Subtask clean_data
+[2022-08-21 19:39:16,804] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-21T19:29:13.291295+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-21 19:39:16,848] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-21T19:29:13.291295+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-21T19:29:13.291295+00:00
+[2022-08-21 19:39:16,851] {base.py:68} INFO - Using connection ID 'spark_default' for task execution.
+[2022-08-21 19:39:16,852] {spark_submit.py:334} INFO - Spark-Submit cmd: spark-submit --master yarn --name arrow-spark /home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py
+[2022-08-21 19:39:18,005] {spark_submit.py:485} INFO - SLF4J: Class path contains multiple SLF4J bindings.
+[2022-08-21 19:39:18,006] {spark_submit.py:485} INFO - SLF4J: Found binding in [jar:file:/usr/lib/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2022-08-21 19:39:18,006] {spark_submit.py:485} INFO - SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[2022-08-21 19:39:18,006] {spark_submit.py:485} INFO - SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[2022-08-21 19:39:18,006] {spark_submit.py:485} INFO - SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+[2022-08-21 19:39:19,434] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,434 INFO spark.SparkContext: Running Spark version 3.0.3
+[2022-08-21 19:39:19,476] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,476 INFO resource.ResourceUtils: ==============================================================
+[2022-08-21 19:39:19,478] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,478 INFO resource.ResourceUtils: Resources for spark.driver:
+[2022-08-21 19:39:19,478] {spark_submit.py:485} INFO - 
+[2022-08-21 19:39:19,478] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,478 INFO resource.ResourceUtils: ==============================================================
+[2022-08-21 19:39:19,479] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,479 INFO spark.SparkContext: Submitted application: arrow-spark
+[2022-08-21 19:39:19,542] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,541 INFO spark.SecurityManager: Changing view acls to: ubuntu
+[2022-08-21 19:39:19,542] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,542 INFO spark.SecurityManager: Changing modify acls to: ubuntu
+[2022-08-21 19:39:19,542] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,542 INFO spark.SecurityManager: Changing view acls groups to:
+[2022-08-21 19:39:19,542] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,542 INFO spark.SecurityManager: Changing modify acls groups to:
+[2022-08-21 19:39:19,542] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,542 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+[2022-08-21 19:39:19,803] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,803 INFO util.Utils: Successfully started service 'sparkDriver' on port 45547.
+[2022-08-21 19:39:19,832] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,832 INFO spark.SparkEnv: Registering MapOutputTracker
+[2022-08-21 19:39:19,867] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,867 INFO spark.SparkEnv: Registering BlockManagerMaster
+[2022-08-21 19:39:19,886] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,886 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2022-08-21 19:39:19,887] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,887 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2022-08-21 19:39:19,918] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,918 INFO spark.SparkEnv: Registering BlockManagerMasterHeartbeat
+[2022-08-21 19:39:19,932] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,932 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-d5e952d2-aeaa-4842-b129-c2a0f9b22d17
+[2022-08-21 19:39:19,956] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,956 INFO memory.MemoryStore: MemoryStore started with capacity 1643.3 MiB
+[2022-08-21 19:39:19,990] {spark_submit.py:485} INFO - 2022-08-21 19:39:19,990 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+[2022-08-21 19:39:20,166] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,165 INFO util.log: Logging initialized @3104ms to org.sparkproject.jetty.util.log.Slf4jLog
+[2022-08-21 19:39:20,274] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,274 INFO server.Server: jetty-9.4.40.v20210413; built: 2021-04-13T20:42:42.668Z; git: b881a572662e1943a14ae12e7e1207989f218b74; jvm 1.8.0_312-8u312-b07-0ubuntu1~20.04-b07
+[2022-08-21 19:39:20,303] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,303 INFO server.Server: Started @3243ms
+[2022-08-21 19:39:20,354] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,354 INFO server.AbstractConnector: Started ServerConnector@494a27e{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+[2022-08-21 19:39:20,354] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,354 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+[2022-08-21 19:39:20,384] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,384 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@40083da2{/jobs,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,386] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,386 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6556fc36{/jobs/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,387] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,387 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@246a10c6{/jobs/job,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,388] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,388 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@750c9aab{/jobs/job/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,389] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,389 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@13a4195d{/stages,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,389] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,389 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6dc22597{/stages/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,390] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,390 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7d6fd581{/stages/stage,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,392] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,392 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7360d83a{/stages/stage/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,393] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,393 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1cd5e242{/stages/pool,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,394] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,394 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1f94fe08{/stages/pool/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,395] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,394 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@49c22735{/storage,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,395] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,395 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@19e5a9a4{/storage/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,396] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,396 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@bd4990a{/storage/rdd,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,397] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,397 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@55a2fa00{/storage/rdd/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,397] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,397 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@16b46c9e{/environment,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,398] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,398 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4315771b{/environment/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,399] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,399 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@720099ac{/executors,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,400] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,400 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@34301244{/executors/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,401] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,401 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2bed6922{/executors/threadDump,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,402] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,402 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ba1225a{/executors/threadDump/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,412] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,412 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@444abc83{/static,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,413] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,413 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@27d96e66{/,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,414] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,414 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@60dbfbcc{/api,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,414] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,414 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3f410bd6{/jobs/job/kill,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,415] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,415 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@68f26ba4{/stages/stage/kill,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:20,417] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,417 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:4040
+[2022-08-21 19:39:20,596] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,596 WARN util.Utils: spark.executor.instances less than spark.dynamicAllocation.minExecutors is invalid, ignoring its setting, please update your configs.
+[2022-08-21 19:39:20,599] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,598 INFO util.Utils: Using initial executors = 1, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+[2022-08-21 19:39:20,669] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,668 INFO client.RMProxy: Connecting to ResourceManager at rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/10.129.0.19:8032
+[2022-08-21 19:39:20,855] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,854 INFO client.AHSProxy: Connecting to Application History server at rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/10.129.0.19:10200
+[2022-08-21 19:39:20,921] {spark_submit.py:485} INFO - 2022-08-21 19:39:20,920 INFO yarn.Client: Requesting a new application from cluster with 2 NodeManagers
+[2022-08-21 19:39:21,445] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,444 INFO conf.Configuration: resource-types.xml not found
+[2022-08-21 19:39:21,445] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,445 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+[2022-08-21 19:39:21,459] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,458 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+[2022-08-21 19:39:21,459] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,459 INFO yarn.Client: Will allocate AM container, with 3456 MB memory including 384 MB overhead
+[2022-08-21 19:39:21,460] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,459 INFO yarn.Client: Setting up container launch context for our AM
+[2022-08-21 19:39:21,462] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,462 INFO yarn.Client: Setting up the launch environment for our AM container
+[2022-08-21 19:39:21,472] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,471 INFO yarn.Client: Preparing resources for our AM container
+[2022-08-21 19:39:21,520] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,520 INFO yarn.Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0007/pyspark.zip
+[2022-08-21 19:39:21,713] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,713 INFO yarn.Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.9-src.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0007/py4j-0.10.9-src.zip
+[2022-08-21 19:39:21,899] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,899 INFO yarn.Client: Uploading resource file:/tmp/spark-70957525-9c42-427c-88a6-1b85542dde05/__spark_conf__8549527176216842668.zip -> hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net/user/ubuntu/.sparkStaging/application_1661098118612_0007/__spark_conf__.zip
+[2022-08-21 19:39:21,959] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,959 INFO spark.SecurityManager: Changing view acls to: ubuntu
+[2022-08-21 19:39:21,959] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,959 INFO spark.SecurityManager: Changing modify acls to: ubuntu
+[2022-08-21 19:39:21,959] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,959 INFO spark.SecurityManager: Changing view acls groups to:
+[2022-08-21 19:39:21,959] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,959 INFO spark.SecurityManager: Changing modify acls groups to:
+[2022-08-21 19:39:21,959] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,959 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+[2022-08-21 19:39:21,990] {spark_submit.py:485} INFO - 2022-08-21 19:39:21,987 INFO yarn.Client: Submitting application application_1661098118612_0007 to ResourceManager
+[2022-08-21 19:39:22,028] {spark_submit.py:485} INFO - 2022-08-21 19:39:22,028 INFO impl.YarnClientImpl: Submitted application application_1661098118612_0007
+[2022-08-21 19:39:23,033] {spark_submit.py:485} INFO - 2022-08-21 19:39:23,032 INFO yarn.Client: Application report for application_1661098118612_0007 (state: ACCEPTED)
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - 2022-08-21 19:39:23,035 INFO yarn.Client:
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - client token: N/A
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - diagnostics: AM container is launched, waiting for AM container to Register with RM
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - ApplicationMaster host: N/A
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - ApplicationMaster RPC port: -1
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - queue: default
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - start time: 1661110762001
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - final status: UNDEFINED
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - tracking URL: http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8088/proxy/application_1661098118612_0007/
+[2022-08-21 19:39:23,035] {spark_submit.py:485} INFO - user: ubuntu
+[2022-08-21 19:39:24,038] {spark_submit.py:485} INFO - 2022-08-21 19:39:24,038 INFO yarn.Client: Application report for application_1661098118612_0007 (state: ACCEPTED)
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,041 INFO yarn.Client: Application report for application_1661098118612_0007 (state: RUNNING)
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,041 INFO yarn.Client:
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - client token: N/A
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - diagnostics: N/A
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - ApplicationMaster host: 10.129.0.18
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - ApplicationMaster RPC port: -1
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - queue: default
+[2022-08-21 19:39:25,043] {spark_submit.py:485} INFO - start time: 1661110762001
+[2022-08-21 19:39:25,044] {spark_submit.py:485} INFO - final status: UNDEFINED
+[2022-08-21 19:39:25,044] {spark_submit.py:485} INFO - tracking URL: http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8088/proxy/application_1661098118612_0007/
+[2022-08-21 19:39:25,044] {spark_submit.py:485} INFO - user: ubuntu
+[2022-08-21 19:39:25,044] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,043 INFO cluster.YarnClientSchedulerBackend: Application application_1661098118612_0007 has started running.
+[2022-08-21 19:39:25,056] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,056 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45523.
+[2022-08-21 19:39:25,057] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,057 INFO netty.NettyBlockTransferService: Server created on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523
+[2022-08-21 19:39:25,063] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,058 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2022-08-21 19:39:25,063] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,061 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net, PROXY_URI_BASES -> http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8088/proxy/application_1661098118612_0007), /proxy/application_1661098118612_0007
+[2022-08-21 19:39:25,080] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,080 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net, 45523, None)
+[2022-08-21 19:39:25,085] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,085 INFO storage.BlockManagerMasterEndpoint: Registering block manager rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 with 1643.3 MiB RAM, BlockManagerId(driver, rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net, 45523, None)
+[2022-08-21 19:39:25,089] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,089 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net, 45523, None)
+[2022-08-21 19:39:25,090] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,090 INFO storage.BlockManager: external shuffle service port = 7337
+[2022-08-21 19:39:25,093] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,093 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net, 45523, None)
+[2022-08-21 19:39:25,307] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,307 INFO ui.ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:25,310] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,309 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@413ec261{/metrics/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:25,358] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,358 INFO history.SingleEventLogFileWriter: Logging events to hdfs:/var/log/spark/apps/application_1661098118612_0007.inprogress
+[2022-08-21 19:39:25,599] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,599 WARN util.Utils: spark.executor.instances less than spark.dynamicAllocation.minExecutors is invalid, ignoring its setting, please update your configs.
+[2022-08-21 19:39:25,600] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,599 INFO util.Utils: Using initial executors = 1, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+[2022-08-21 19:39:25,617] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,617 WARN cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+[2022-08-21 19:39:25,714] {spark_submit.py:485} INFO - 2022-08-21 19:39:25,713 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+[2022-08-21 19:39:27,852] {spark_submit.py:485} INFO - 2022-08-21 19:39:27,852 INFO resource.ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 5530, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2022-08-21 19:39:28,579] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,578 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.129.0.3:52840) with ID 1
+[2022-08-21 19:39:28,589] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,589 INFO dynalloc.ExecutorMonitor: New executor 1 has registered (new total is 1)
+[2022-08-21 19:39:28,669] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,668 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+[2022-08-21 19:39:28,688] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,687 INFO storage.BlockManagerMasterEndpoint: Registering block manager rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 with 3.0 GiB RAM, BlockManagerId(1, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, 33043, None)
+[2022-08-21 19:39:28,894] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,894 INFO internal.SharedState: Setting hive.metastore.warehouse.dir ('hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8020/user/hive/warehouse') to the value of spark.sql.warehouse.dir ('hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8020/user/hive/warehouse').
+[2022-08-21 19:39:28,895] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,895 INFO internal.SharedState: Warehouse path is 'hdfs://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:8020/user/hive/warehouse'.
+[2022-08-21 19:39:28,908] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,908 INFO ui.ServerInfo: Adding filter to /SQL: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:28,909] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,909 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@531f08b8{/SQL,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:28,910] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,910 INFO ui.ServerInfo: Adding filter to /SQL/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:28,911] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,911 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@d654472{/SQL/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:28,911] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,911 INFO ui.ServerInfo: Adding filter to /SQL/execution: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:28,912] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,912 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1e7f5241{/SQL/execution,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:28,913] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,913 INFO ui.ServerInfo: Adding filter to /SQL/execution/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:28,913] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,913 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@123b6f42{/SQL/execution/json,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:28,914] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,914 INFO ui.ServerInfo: Adding filter to /static/sql: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2022-08-21 19:39:28,916] {spark_submit.py:485} INFO - 2022-08-21 19:39:28,916 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@27ee71e9{/static/sql,null,AVAILABLE,@Spark}
+[2022-08-21 19:39:29,685] {spark_submit.py:485} INFO - 2022-08-21 19:39:29,684 INFO datasources.InMemoryFileIndex: It took 56 ms to list leaf files for 1 paths.
+[2022-08-21 19:39:30,049] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,049 INFO spark.SparkContext: Starting job: load at NativeMethodAccessorImpl.java:0
+[2022-08-21 19:39:30,070] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,070 INFO scheduler.DAGScheduler: Got job 0 (load at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2022-08-21 19:39:30,071] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,070 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (load at NativeMethodAccessorImpl.java:0)
+[2022-08-21 19:39:30,071] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,071 INFO scheduler.DAGScheduler: Parents of final stage: List()
+[2022-08-21 19:39:30,073] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,073 INFO scheduler.DAGScheduler: Missing parents: List()
+[2022-08-21 19:39:30,090] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,089 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at load at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2022-08-21 19:39:30,178] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,178 INFO memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 133.3 KiB, free 1643.1 MiB)
+[2022-08-21 19:39:30,236] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,236 INFO memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 50.0 KiB, free 1643.1 MiB)
+[2022-08-21 19:39:30,241] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,238 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 50.0 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:30,242] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,241 INFO spark.SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:30,260] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,260 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at load at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2022-08-21 19:39:30,262] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,261 INFO cluster.YarnScheduler: Adding task set 0.0 with 1 tasks
+[2022-08-21 19:39:30,302] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,301 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, PROCESS_LOCAL, 7564 bytes)
+[2022-08-21 19:39:30,545] {spark_submit.py:485} INFO - 2022-08-21 19:39:30,545 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 50.0 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:32,038] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,038 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1749 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/1)
+[2022-08-21 19:39:32,047] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,047 INFO scheduler.DAGScheduler: ResultStage 0 (load at NativeMethodAccessorImpl.java:0) finished in 1.935 s
+[2022-08-21 19:39:32,051] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,040 INFO cluster.YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:32,051] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,051 INFO scheduler.DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-08-21 19:39:32,052] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,052 INFO cluster.YarnScheduler: Killing all running tasks in stage 0: Stage finished
+[2022-08-21 19:39:32,060] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,054 INFO scheduler.DAGScheduler: Job 0 finished: load at NativeMethodAccessorImpl.java:0, took 2.004858 s
+[2022-08-21 19:39:32,322] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,322 INFO storage.BlockManagerInfo: Removed broadcast_0_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 50.0 KiB, free: 1643.3 MiB)
+[2022-08-21 19:39:32,349] {spark_submit.py:485} INFO - 2022-08-21 19:39:32,349 INFO storage.BlockManagerInfo: Removed broadcast_0_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 50.0 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:34,639] {spark_submit.py:485} INFO - 2022-08-21 19:39:34,639 INFO datasources.FileSourceStrategy: Pushed Filters:
+[2022-08-21 19:39:34,639] {spark_submit.py:485} INFO - 2022-08-21 19:39:34,639 INFO datasources.FileSourceStrategy: Post-Scan Filters:
+[2022-08-21 19:39:34,642] {spark_submit.py:485} INFO - 2022-08-21 19:39:34,642 INFO datasources.FileSourceStrategy: Output Data Schema: struct<TERMINAL_ID: bigint>
+[2022-08-21 19:39:35,210] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,209 INFO codegen.CodeGenerator: Code generated in 324.744178 ms
+[2022-08-21 19:39:35,242] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,242 INFO memory.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 435.2 KiB, free 1642.8 MiB)
+[2022-08-21 19:39:35,260] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,260 INFO memory.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 48.3 KiB, free 1642.8 MiB)
+[2022-08-21 19:39:35,261] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,261 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 48.3 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:35,263] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,262 INFO spark.SparkContext: Created broadcast 1 from collect at StringIndexer.scala:204
+[2022-08-21 19:39:35,275] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,275 INFO execution.FileSourceScanExec: Planning scan with bin packing, max size: 4556655 bytes, open cost is considered as scanning 4194304 bytes.
+[2022-08-21 19:39:35,440] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,440 INFO spark.SparkContext: Starting job: collect at StringIndexer.scala:204
+[2022-08-21 19:39:35,444] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,444 INFO scheduler.DAGScheduler: Registering RDD 6 (collect at StringIndexer.scala:204) as input to shuffle 0
+[2022-08-21 19:39:35,447] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,447 INFO scheduler.DAGScheduler: Got job 1 (collect at StringIndexer.scala:204) with 1 output partitions
+[2022-08-21 19:39:35,447] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,447 INFO scheduler.DAGScheduler: Final stage: ResultStage 2 (collect at StringIndexer.scala:204)
+[2022-08-21 19:39:35,447] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,447 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+[2022-08-21 19:39:35,449] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,449 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+[2022-08-21 19:39:35,455] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,455 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[6] at collect at StringIndexer.scala:204), which has no missing parents
+[2022-08-21 19:39:35,486] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,486 INFO memory.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 23.3 KiB, free 1642.8 MiB)
+[2022-08-21 19:39:35,488] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,488 INFO memory.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 10.5 KiB, free 1642.7 MiB)
+[2022-08-21 19:39:35,489] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,489 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 10.5 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:35,490] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,490 INFO spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:35,494] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,493 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[6] at collect at StringIndexer.scala:204) (first 15 tasks are for partitions Vector(0, 1))
+[2022-08-21 19:39:35,494] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,494 INFO cluster.YarnScheduler: Adding task set 1.0 with 2 tasks
+[2022-08-21 19:39:35,503] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,503 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, NODE_LOCAL, 7802 bytes)
+[2022-08-21 19:39:35,505] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,504 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 1, NODE_LOCAL, 7802 bytes)
+[2022-08-21 19:39:35,552] {spark_submit.py:485} INFO - 2022-08-21 19:39:35,552 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 10.5 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:36,315] {spark_submit.py:485} INFO - 2022-08-21 19:39:36,315 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 48.3 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:37,140] {spark_submit.py:485} INFO - 2022-08-21 19:39:37,140 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 1637 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/2)
+[2022-08-21 19:39:38,139] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,138 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 2639 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (2/2)
+[2022-08-21 19:39:38,139] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,139 INFO cluster.YarnScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:38,140] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,140 INFO scheduler.DAGScheduler: ShuffleMapStage 1 (collect at StringIndexer.scala:204) finished in 2.665 s
+[2022-08-21 19:39:38,141] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,141 INFO scheduler.DAGScheduler: looking for newly runnable stages
+[2022-08-21 19:39:38,142] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,142 INFO scheduler.DAGScheduler: running: Set()
+[2022-08-21 19:39:38,142] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,142 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 2)
+[2022-08-21 19:39:38,143] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,142 INFO scheduler.DAGScheduler: failed: Set()
+[2022-08-21 19:39:38,163] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,163 INFO scheduler.DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[9] at collect at StringIndexer.scala:204), which has no missing parents
+[2022-08-21 19:39:38,173] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,173 INFO memory.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 20.2 KiB, free 1642.7 MiB)
+[2022-08-21 19:39:38,175] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,175 INFO memory.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 9.7 KiB, free 1642.7 MiB)
+[2022-08-21 19:39:38,175] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,175 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 9.7 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:38,176] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,176 INFO spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:38,177] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,176 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[9] at collect at StringIndexer.scala:204) (first 15 tasks are for partitions Vector(0))
+[2022-08-21 19:39:38,177] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,177 INFO cluster.YarnScheduler: Adding task set 2.0 with 1 tasks
+[2022-08-21 19:39:38,179] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,179 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 2.0 (TID 3, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, NODE_LOCAL, 7336 bytes)
+[2022-08-21 19:39:38,214] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,214 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 9.7 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:38,248] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,247 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.129.0.3:52840
+[2022-08-21 19:39:38,402] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,402 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 2.0 (TID 3) in 224 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/1)
+[2022-08-21 19:39:38,402] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,402 INFO cluster.YarnScheduler: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:38,406] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,403 INFO scheduler.DAGScheduler: ResultStage 2 (collect at StringIndexer.scala:204) finished in 0.234 s
+[2022-08-21 19:39:38,407] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,404 INFO scheduler.DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-08-21 19:39:38,407] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,404 INFO cluster.YarnScheduler: Killing all running tasks in stage 2: Stage finished
+[2022-08-21 19:39:38,407] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,404 INFO scheduler.DAGScheduler: Job 1 finished: collect at StringIndexer.scala:204, took 2.964202 s
+[2022-08-21 19:39:38,446] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,446 INFO codegen.CodeGenerator: Code generated in 24.797138 ms
+[2022-08-21 19:39:38,989] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,989 INFO datasources.FileSourceStrategy: Pushed Filters:
+[2022-08-21 19:39:38,989] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,989 INFO datasources.FileSourceStrategy: Post-Scan Filters:
+[2022-08-21 19:39:38,989] {spark_submit.py:485} INFO - 2022-08-21 19:39:38,989 INFO datasources.FileSourceStrategy: Output Data Schema: struct<TX_AMOUNT: double>
+[2022-08-21 19:39:39,050] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,050 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 10.5 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:39,070] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,069 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 10.5 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:39,089] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,089 INFO codegen.CodeGenerator: Code generated in 51.284512 ms
+[2022-08-21 19:39:39,099] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,099 INFO memory.MemoryStore: Block broadcast_4 stored as values in memory (estimated size 435.2 KiB, free 1642.3 MiB)
+[2022-08-21 19:39:39,121] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,118 INFO memory.MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 48.3 KiB, free 1642.3 MiB)
+[2022-08-21 19:39:39,121] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,119 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 48.3 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:39,121] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,120 INFO spark.SparkContext: Created broadcast 4 from first at MinMaxScaler.scala:120
+[2022-08-21 19:39:39,121] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,121 INFO execution.FileSourceScanExec: Planning scan with bin packing, max size: 4556655 bytes, open cost is considered as scanning 4194304 bytes.
+[2022-08-21 19:39:39,145] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,144 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 9.7 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:39,147] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,147 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 9.7 KiB, free: 1643.2 MiB)
+[2022-08-21 19:39:39,171] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,171 INFO spark.SparkContext: Starting job: first at MinMaxScaler.scala:120
+[2022-08-21 19:39:39,180] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,180 INFO scheduler.DAGScheduler: Registering RDD 14 (first at MinMaxScaler.scala:120) as input to shuffle 1
+[2022-08-21 19:39:39,181] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,181 INFO scheduler.DAGScheduler: Got job 2 (first at MinMaxScaler.scala:120) with 1 output partitions
+[2022-08-21 19:39:39,181] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,181 INFO scheduler.DAGScheduler: Final stage: ResultStage 4 (first at MinMaxScaler.scala:120)
+[2022-08-21 19:39:39,181] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,181 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+[2022-08-21 19:39:39,181] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,181 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+[2022-08-21 19:39:39,182] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,181 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[14] at first at MinMaxScaler.scala:120), which has no missing parents
+[2022-08-21 19:39:39,205] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,205 INFO memory.MemoryStore: Block broadcast_5 stored as values in memory (estimated size 27.7 KiB, free 1642.3 MiB)
+[2022-08-21 19:39:39,207] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,206 INFO memory.MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 12.0 KiB, free 1642.3 MiB)
+[2022-08-21 19:39:39,207] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,207 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 12.0 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:39,208] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,208 INFO spark.SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:39,209] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,209 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[14] at first at MinMaxScaler.scala:120) (first 15 tasks are for partitions Vector(0, 1))
+[2022-08-21 19:39:39,209] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,209 INFO cluster.YarnScheduler: Adding task set 3.0 with 2 tasks
+[2022-08-21 19:39:39,211] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,211 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, NODE_LOCAL, 7802 bytes)
+[2022-08-21 19:39:39,211] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,211 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 1, NODE_LOCAL, 7802 bytes)
+[2022-08-21 19:39:39,237] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,236 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 12.0 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:39,382] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,382 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 48.3 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:39,463] {spark_submit.py:485} INFO - 2022-08-21 19:39:39,463 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 252 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/2)
+[2022-08-21 19:39:40,016] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,015 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 805 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (2/2)
+[2022-08-21 19:39:40,016] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,016 INFO cluster.YarnScheduler: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:40,018] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: ShuffleMapStage 3 (first at MinMaxScaler.scala:120) finished in 0.834 s
+[2022-08-21 19:39:40,019] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: looking for newly runnable stages
+[2022-08-21 19:39:40,019] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: running: Set()
+[2022-08-21 19:39:40,019] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 4)
+[2022-08-21 19:39:40,019] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: failed: Set()
+[2022-08-21 19:39:40,019] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,017 INFO scheduler.DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[17] at first at MinMaxScaler.scala:120), which has no missing parents
+[2022-08-21 19:39:40,029] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,029 INFO memory.MemoryStore: Block broadcast_6 stored as values in memory (estimated size 20.7 KiB, free 1642.2 MiB)
+[2022-08-21 19:39:40,031] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,031 INFO memory.MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 10.2 KiB, free 1642.2 MiB)
+[2022-08-21 19:39:40,032] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,032 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 10.2 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:40,033] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,033 INFO spark.SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:40,034] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,034 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[17] at first at MinMaxScaler.scala:120) (first 15 tasks are for partitions Vector(0))
+[2022-08-21 19:39:40,034] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,034 INFO cluster.YarnScheduler: Adding task set 4.0 with 1 tasks
+[2022-08-21 19:39:40,036] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,036 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 4.0 (TID 6, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, NODE_LOCAL, 7336 bytes)
+[2022-08-21 19:39:40,055] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,055 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 10.2 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:40,068] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,068 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.129.0.3:52840
+[2022-08-21 19:39:40,132] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,131 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 4.0 (TID 6) in 95 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/1)
+[2022-08-21 19:39:40,132] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,132 INFO cluster.YarnScheduler: Removed TaskSet 4.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:40,133] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,133 INFO scheduler.DAGScheduler: ResultStage 4 (first at MinMaxScaler.scala:120) finished in 0.114 s
+[2022-08-21 19:39:40,134] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,134 INFO scheduler.DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-08-21 19:39:40,134] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,134 INFO cluster.YarnScheduler: Killing all running tasks in stage 4: Stage finished
+[2022-08-21 19:39:40,134] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,134 INFO scheduler.DAGScheduler: Job 2 finished: first at MinMaxScaler.scala:120, took 0.962743 s
+[2022-08-21 19:39:40,166] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,166 INFO codegen.CodeGenerator: Code generated in 18.628624 ms
+[2022-08-21 19:39:40,367] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,367 INFO datasources.FileSourceStrategy: Pushed Filters:
+[2022-08-21 19:39:40,367] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,367 INFO datasources.FileSourceStrategy: Post-Scan Filters:
+[2022-08-21 19:39:40,367] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,367 INFO datasources.FileSourceStrategy: Output Data Schema: struct<TERMINAL_ID: bigint, TX_AMOUNT: double, TX_FRAUD: bigint ... 1 more fields>
+[2022-08-21 19:39:40,422] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,422 INFO parquet.ParquetFileFormat: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2022-08-21 19:39:40,440] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,440 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+[2022-08-21 19:39:40,440] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,440 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2022-08-21 19:39:40,441] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,441 INFO datasources.SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2022-08-21 19:39:40,441] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,441 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 1
+[2022-08-21 19:39:40,441] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,441 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2022-08-21 19:39:40,442] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,442 INFO datasources.SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2022-08-21 19:39:40,529] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,529 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 12.0 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:40,533] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,533 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 12.0 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:40,555] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,555 INFO codegen.CodeGenerator: Code generated in 91.291197 ms
+[2022-08-21 19:39:40,563] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,563 INFO memory.MemoryStore: Block broadcast_7 stored as values in memory (estimated size 435.7 KiB, free 1641.9 MiB)
+[2022-08-21 19:39:40,584] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,580 INFO memory.MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 48.4 KiB, free 1641.8 MiB)
+[2022-08-21 19:39:40,584] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,580 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 48.4 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:40,584] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,581 INFO spark.SparkContext: Created broadcast 7 from save at NativeMethodAccessorImpl.java:0
+[2022-08-21 19:39:40,584] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,582 INFO execution.FileSourceScanExec: Planning scan with bin packing, max size: 4556655 bytes, open cost is considered as scanning 4194304 bytes.
+[2022-08-21 19:39:40,632] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,632 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 10.2 KiB, free: 1643.1 MiB)
+[2022-08-21 19:39:40,642] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,642 INFO spark.SparkContext: Starting job: save at NativeMethodAccessorImpl.java:0
+[2022-08-21 19:39:40,658] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,652 INFO scheduler.DAGScheduler: Got job 3 (save at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2022-08-21 19:39:40,658] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,652 INFO scheduler.DAGScheduler: Final stage: ResultStage 5 (save at NativeMethodAccessorImpl.java:0)
+[2022-08-21 19:39:40,658] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,652 INFO scheduler.DAGScheduler: Parents of final stage: List()
+[2022-08-21 19:39:40,658] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,652 INFO scheduler.DAGScheduler: Missing parents: List()
+[2022-08-21 19:39:40,658] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,652 INFO scheduler.DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[20] at save at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2022-08-21 19:39:40,728] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,727 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 10.2 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:40,728] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,727 INFO memory.MemoryStore: Block broadcast_8 stored as values in memory (estimated size 315.1 KiB, free 1641.5 MiB)
+[2022-08-21 19:39:40,736] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,730 INFO memory.MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 114.4 KiB, free 1641.4 MiB)
+[2022-08-21 19:39:40,737] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,736 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 (size: 114.4 KiB, free: 1643.0 MiB)
+[2022-08-21 19:39:40,738] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,737 INFO spark.SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1223
+[2022-08-21 19:39:40,738] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,737 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 5 (MapPartitionsRDD[20] at save at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2022-08-21 19:39:40,738] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,738 INFO cluster.YarnScheduler: Adding task set 5.0 with 2 tasks
+[2022-08-21 19:39:40,745] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,744 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 5.0 (TID 7, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 0, NODE_LOCAL, 7813 bytes)
+[2022-08-21 19:39:40,746] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,745 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 5.0 (TID 8, rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net, executor 1, partition 1, NODE_LOCAL, 7813 bytes)
+[2022-08-21 19:39:40,755] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,755 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:45523 in memory (size: 48.3 KiB, free: 1643.0 MiB)
+[2022-08-21 19:39:40,770] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,770 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 in memory (size: 48.3 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:40,784] {spark_submit.py:485} INFO - 2022-08-21 19:39:40,784 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 114.4 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:41,015] {spark_submit.py:485} INFO - 2022-08-21 19:39:41,015 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net:33043 (size: 48.4 KiB, free: 3.0 GiB)
+[2022-08-21 19:39:41,101] {spark_submit.py:485} INFO - 2022-08-21 19:39:41,101 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 5.0 (TID 8) in 357 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (1/2)
+[2022-08-21 19:39:42,632] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,632 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 5.0 (TID 7) in 1888 ms on rc1b-dataproc-d-0nddjj9z3w67zp6x.mdb.yandexcloud.net (executor 1) (2/2)
+[2022-08-21 19:39:42,632] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,632 INFO cluster.YarnScheduler: Removed TaskSet 5.0, whose tasks have all completed, from pool
+[2022-08-21 19:39:42,633] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,633 INFO scheduler.DAGScheduler: ResultStage 5 (save at NativeMethodAccessorImpl.java:0) finished in 1.977 s
+[2022-08-21 19:39:42,634] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,633 INFO scheduler.DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-08-21 19:39:42,634] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,633 INFO cluster.YarnScheduler: Killing all running tasks in stage 5: Stage finished
+[2022-08-21 19:39:42,634] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,634 INFO scheduler.DAGScheduler: Job 3 finished: save at NativeMethodAccessorImpl.java:0, took 1.991084 s
+[2022-08-21 19:39:42,657] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,657 INFO datasources.FileFormatWriter: Write Job a3ee11e7-93d7-4572-9046-66f2ab65c870 committed.
+[2022-08-21 19:39:42,661] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,661 INFO datasources.FileFormatWriter: Finished processing stats for write job a3ee11e7-93d7-4572-9046-66f2ab65c870.
+[2022-08-21 19:39:42,727] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,727 INFO spark.SparkContext: Invoking stop() from shutdown hook
+[2022-08-21 19:39:42,737] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,737 INFO server.AbstractConnector: Stopped Spark@494a27e{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+[2022-08-21 19:39:42,738] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,738 INFO ui.SparkUI: Stopped Spark web UI at http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:4040
+[2022-08-21 19:39:42,743] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,743 INFO cluster.YarnClientSchedulerBackend: Interrupting monitor thread
+[2022-08-21 19:39:42,759] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,759 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+[2022-08-21 19:39:42,760] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,760 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+[2022-08-21 19:39:42,765] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,765 INFO cluster.YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+[2022-08-21 19:39:42,788] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,788 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2022-08-21 19:39:42,799] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,799 INFO memory.MemoryStore: MemoryStore cleared
+[2022-08-21 19:39:42,799] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,799 INFO storage.BlockManager: BlockManager stopped
+[2022-08-21 19:39:42,801] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,801 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+[2022-08-21 19:39:42,805] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,805 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2022-08-21 19:39:42,820] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,820 INFO spark.SparkContext: Successfully stopped SparkContext
+[2022-08-21 19:39:42,820] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,820 INFO util.ShutdownHookManager: Shutdown hook called
+[2022-08-21 19:39:42,821] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,821 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-70957525-9c42-427c-88a6-1b85542dde05/pyspark-5ea0ad83-d625-411a-93db-0c2f74678513
+[2022-08-21 19:39:42,826] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,826 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-70957525-9c42-427c-88a6-1b85542dde05
+[2022-08-21 19:39:42,831] {spark_submit.py:485} INFO - 2022-08-21 19:39:42,829 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-358d3100-4757-4fa7-87d7-d8fd2538e8ac
+[2022-08-21 19:39:43,193] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220821T192913, start_date=20220821T193916, end_date=20220821T193943
+[2022-08-21 19:39:43,240] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-21 19:39:43,344] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

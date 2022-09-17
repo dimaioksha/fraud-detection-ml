@@ -10,26 +10,33 @@ from pyspark.sql import SparkSession
 import sys
 import logging
 import os
+import pyspark.sql.functions as F
+from pyspark.ml import Pipeline
+
+logger = logging.getLogger(__name__)
+
+from dotenv import load_dotenv
+import mlflow
+
+os.environ["AWS_ACCESS_KEY_ID"] = os.getenv("AWS_ACCESS_KEY_ID")
+os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv("AWS_SECRET_ACCESS_KEY")
+os.environ["MLFLOW_S3_ENDPOINT_URL"] = "https://storage.yandexcloud.net"
+TRACKING_SERVER_HOST = os.getenv(
+    "TRACKING_SERVER_HOST"
+)  # fill in with the public DNS of the EC2 instance
+mlflow.set_tracking_uri(f"http://{TRACKING_SERVER_HOST}:5001")
+mlflow.set_experiment("fraud-transaction-prediction")
 
 logger = logging.getLogger(__name__)
 
 
 def clean_data(**kwargs):
 
-    logger.info("")
-    hdfs_url = os.getenv(
-        "HDFS_NAMENODE_URL",
-        "http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870",
-    )
-    client = Client(hdfs_url)
+    ti = kwargs["ti"]
+    partition = ti.xcom_pull(task_ids="combine_data", key="batch_to_train")
 
-    partition = client.content("/user/airflow/input_files")["fileCount"] - 1
+    file_name = f"/user/airflow/intermediate_files/{partition}"
 
-    if partition == 0:
-        partition += 1
-
-    file_name = f"/user/airflow/input_files/partition_{partition}.parquet"
-    target = "TX_FRAUD"
     spark = SparkSession.builder.master("yarn").getOrCreate()
     df = spark.read.format("parquet").load(file_name)
 
@@ -44,15 +51,11 @@ def clean_data(**kwargs):
         VectorAssembler().setInputCols(numericColumns).setOutputCol("features")
     )
 
-    numeric = numericAssembler.transform(df)
-
     stringColumnsIndexed = list(map(lambda x: x + "_Indexed", stringColumns))
 
     indexer = (
         StringIndexer().setInputCols(stringColumns).setOutputCols(stringColumnsIndexed)
     )
-
-    indexed = indexer.fit(numeric).transform(numeric)
 
     catColumns = list(map(lambda x: x + "_Coded", stringColumnsIndexed))
 
@@ -60,34 +63,39 @@ def clean_data(**kwargs):
         OneHotEncoder().setInputCols(stringColumnsIndexed).setOutputCols(catColumns)
     )
 
-    encoded = encoder.fit(indexed).transform(indexed)
-
     featureColumns = ["scaledFeatures"] + catColumns
 
     scaler = MinMaxScaler().setInputCol("features").setOutputCol("scaledFeatures")
-
-    scaled = scaler.fit(encoded).transform(encoded)
 
     assembler = (
         VectorAssembler().setInputCols(featureColumns).setOutputCol("featuresFinal")
     )
 
-    result = assembler.transform(scaled).select("featuresFinal", "TX_FRAUD")
-    result = result.withColumn("TX_FRAUD", result["TX_FRAUD"].cast("integer"))
-    #result_vectorizer = (
-    #    VectorAssembler().setInputCols(["TX_FRAUD"]).setOutputCol("TX_FRAUD_Vectorized")
-    #)
-    #result = result_vectorizer.transform(result)
-
-    result.write.format("parquet").mode("overwrite").save(
-        f"/user/airflow/processed_files/partition_{partition}.parquet"
+    pipeline = Pipeline().setStages(
+        [numericAssembler, indexer, encoder, scaler, assembler]
     )
+    pipelined_model = pipeline.fit(df)
+    result = pipelined_model.transform(df).select("featuresFinal", "TX_FRAUD")
+    result = result.withColumn("TX_FRAUD_I", result["TX_FRAUD"].cast("integer"))
+    labelIndexer = StringIndexer().setInputCol("TX_FRAUD_I").setOutputCol("TX_FRAUD")
+    model_label_indexer = labelIndexer.fit(result.select("TX_FRAUD_I", "featuresFinal"))
+    result = model_label_indexer.transform(result.select("TX_FRAUD_I", "featuresFinal"))
 
-    # return f"/user/airflow/processed_files/partition_{partition}.parquet"
+    result.select("*").orderBy(F.rand()).write.format("parquet").mode("overwrite").save(
+        f"/user/airflow/processed_files/{partition}"
+    )
     kwargs["ti"].xcom_push(
         key="data_path",
-        value=f"/user/airflow/processed_files/partition_{partition}.parquet",
+        value=f"/user/airflow/processed_files/{partition}",
     )
+
+    with mlflow.start_run() as active_run:
+        run_id = active_run.info.run_id
+        mlflow.spark.log_model(pipelined_model, "pipeline")
+        kwargs["ti"].xcom_push(
+            key="run_id_with_pipeline",
+            value=str(run_id),
+        )
 
 
 if __name__ == "__main__":

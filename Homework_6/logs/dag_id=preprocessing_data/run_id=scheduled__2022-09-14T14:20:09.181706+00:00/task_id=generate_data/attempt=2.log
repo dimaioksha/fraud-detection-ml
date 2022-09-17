@@ -1,0 +1,55 @@
+[2022-09-14 14:36:55,572] {taskinstance.py:1169} INFO - Dependencies not met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:20:09.181706+00:00 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2022-09-14T14:36:55.572027+00:00 and task will be retried at 2022-09-14T14:41:52.144837+00:00.
+[2022-09-14 14:36:55,572] {local_task_job.py:101} INFO - Task is not able to be run
+[2022-09-14 14:42:13,119] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:20:09.181706+00:00 [queued]>
+[2022-09-14 14:42:13,126] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:20:09.181706+00:00 [queued]>
+[2022-09-14 14:42:13,126] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 14:42:13,126] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-09-14 14:42:13,126] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 14:42:13,145] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-14 14:20:09.181706+00:00
+[2022-09-14 14:42:13,150] {standard_task_runner.py:52} INFO - Started process 15262 to run task
+[2022-09-14 14:42:13,154] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-14T14:20:09.181706+00:00', '--job-id', '195', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpe9ukuz8s', '--error-file', '/tmp/tmp77f3qad7']
+[2022-09-14 14:42:13,154] {standard_task_runner.py:80} INFO - Job 195: Subtask generate_data
+[2022-09-14 14:42:13,213] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:20:09.181706+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-14 14:42:13,261] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-14T14:20:09.181706+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-14T14:20:09.181706+00:00
+[2022-09-14 14:42:13,320] {logging_mixin.py:115} INFO - Time to generate customer profiles table: 0.058s
+[2022-09-14 14:42:13,372] {logging_mixin.py:115} INFO - Time to generate terminal profiles table: 0.051s
+[2022-09-14 14:42:16,050] {logging_mixin.py:115} INFO - Time to associate terminals to customers: 2.7s
+[2022-09-14 14:45:45,527] {logging_mixin.py:115} INFO - Time to generate transactions: 2.1e+02s
+[2022-09-14 14:45:48,470] {logging_mixin.py:115} INFO - Number of frauds from scenario 1: 2299
+[2022-09-14 14:49:39,273] {logging_mixin.py:115} INFO - Number of frauds from scenario 2: 19150
+[2022-09-14 14:52:04,188] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 15262. PIDs of all processes in the group: [15262]
+[2022-09-14 14:52:04,189] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 15262
+[2022-09-14 14:52:04,237] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-14 14:52:04,244] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/script_generation.py", line 388, in generate_data
+    transactions_df = add_frauds(
+  File "/home/ubuntu/fraud-detection-ml/utils/script_generation.py", line 297, in add_frauds
+    (transactions_df.TX_TIME_DAYS >= day)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/ops/common.py", line 65, in new_method
+    return method(self, other)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 370, in wrapper
+    res_values = comparison_op(lvalues, rvalues, op)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/ops/array_ops.py", line 244, in comparison_op
+    res_values = comp_method_OBJECT_ARRAY(op, lvalues, rvalues)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/ops/array_ops.py", line 56, in comp_method_OBJECT_ARRAY
+    result = libops.scalar_compare(x.ravel(), y, op)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-14 14:52:04,247] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=generate_data, execution_date=20220914T142009, start_date=20220914T144213, end_date=20220914T145204
+[2022-09-14 14:52:04,261] {standard_task_runner.py:92} ERROR - Failed to execute job 195 for task generate_data (Task received SIGTERM signal; 15262)
+[2022-09-14 14:52:04,321] {process_utils.py:75} INFO - Process psutil.Process(pid=15262, status='terminated', exitcode=1, started='14:42:12') (15262) terminated with exit code 1

@@ -1,0 +1,74 @@
+[2022-09-16 13:21:24,813] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:56:09.086448+00:00 [queued]>
+[2022-09-16 13:21:24,819] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:56:09.086448+00:00 [queued]>
+[2022-09-16 13:21:24,819] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:21:24,819] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-09-16 13:21:24,819] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:21:24,835] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): validate_model> on 2022-09-16 12:56:09.086448+00:00
+[2022-09-16 13:21:24,842] {standard_task_runner.py:52} INFO - Started process 58039 to run task
+[2022-09-16 13:21:24,846] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'validate_model', 'scheduled__2022-09-16T12:56:09.086448+00:00', '--job-id', '359', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpg0aydcff', '--error-file', '/tmp/tmp_0qoylee']
+[2022-09-16 13:21:24,847] {standard_task_runner.py:80} INFO - Job 359: Subtask validate_model
+[2022-09-16 13:21:24,902] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-16T12:56:09.086448+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-16 13:21:24,946] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=validate_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-16T12:56:09.086448+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-16T12:56:09.086448+00:00
+[2022-09-16 13:21:40,696] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:40 INFO mlflow.spark: 'runs:/06cd9aefb2c64e66a039d3222ed1aaa8/model' resolved as 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/model'
+[2022-09-16 13:21:40,779] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-09-16 13:21:41,693] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:41 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/model/sparkml' does not point to the current DFS.
+[2022-09-16 13:21:41,693] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:41 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/model/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-16 13:21:42,524] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:42 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/a3dae20b-60ed-4e0a-934a-a5f129183744
+[2022-09-16 13:21:49,923] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:49 INFO mlflow.spark: 'runs:/06cd9aefb2c64e66a039d3222ed1aaa8/pipeline' resolved as 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/pipeline'
+[2022-09-16 13:21:50,730] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:50 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/pipeline/sparkml' does not point to the current DFS.
+[2022-09-16 13:21:50,730] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:50 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/06cd9aefb2c64e66a039d3222ed1aaa8/artifacts/pipeline/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-16 13:21:51,546] {logging_mixin.py:115} WARNING - 2022/09/16 13:21:51 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/6c97b72e-779a-4814-b37b-91e3eff2b972
+[2022-09-16 13:23:14,140] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 58039. PIDs of all processes in the group: [58041, 58039]
+[2022-09-16 13:23:14,140] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 58039
+[2022-09-16 13:23:14,144] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-16 13:23:14,151] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 81, in validate_model
+    current_model_metric = _get_bootstraped_metric_for_model(model, transformed_test_df)
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 46, in _get_bootstraped_metric_for_model
+    scores.loc[i, "F1"] = f1_score_calc(sample["y_test"], sample["y_pred"])
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1044, in f1_score
+    return fbeta_score(y_true, y_pred, beta=1, labels=labels,
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1168, in fbeta_score
+    _, _, f, _ = precision_recall_fscore_support(y_true, y_pred,
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1433, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels,
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1251, in _check_set_wise_labels
+    present_labels = unique_labels(y_true, y_pred)
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/multiclass.py", line 99, in unique_labels
+    ys_labels = set(chain.from_iterable(_unique_labels(y) for y in ys))
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/multiclass.py", line 99, in <genexpr>
+    ys_labels = set(chain.from_iterable(_unique_labels(y) for y in ys))
+  File "/opt/conda/lib/python3.8/site-packages/sklearn/utils/multiclass.py", line 24, in _unique_multiclass
+    return np.unique(np.asarray(y))
+  File "<__array_function__ internals>", line 5, in unique
+  File "/opt/conda/lib/python3.8/site-packages/numpy/lib/arraysetops.py", line 261, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts)
+  File "/opt/conda/lib/python3.8/site-packages/numpy/lib/arraysetops.py", line 322, in _unique1d
+    ar.sort()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-16 13:23:14,169] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=validate_model, execution_date=20220916T125609, start_date=20220916T132124, end_date=20220916T132314
+[2022-09-16 13:23:14,182] {standard_task_runner.py:92} ERROR - Failed to execute job 359 for task validate_model (Task received SIGTERM signal; 58039)
+[2022-09-16 13:23:14,674] {process_utils.py:75} INFO - Process psutil.Process(pid=58039, status='terminated', exitcode=1, started='13:21:24') (58039) terminated with exit code 1
+[2022-09-16 13:23:14,733] {process_utils.py:75} INFO - Process psutil.Process(pid=58041, status='terminated', started='13:21:24') (58041) terminated with exit code None

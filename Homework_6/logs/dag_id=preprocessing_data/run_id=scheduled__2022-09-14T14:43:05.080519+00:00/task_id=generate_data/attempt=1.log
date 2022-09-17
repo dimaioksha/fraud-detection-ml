@@ -1,0 +1,31 @@
+[2022-09-14 14:53:10,261] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:43:05.080519+00:00 [queued]>
+[2022-09-14 14:53:10,267] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:43:05.080519+00:00 [queued]>
+[2022-09-14 14:53:10,267] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 14:53:10,267] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-14 14:53:10,267] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 14:53:10,284] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-14 14:43:05.080519+00:00
+[2022-09-14 14:53:10,287] {standard_task_runner.py:52} INFO - Started process 16841 to run task
+[2022-09-14 14:53:10,291] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-14T14:43:05.080519+00:00', '--job-id', '200', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpb8goakbn', '--error-file', '/tmp/tmpr7q0ciph']
+[2022-09-14 14:53:10,291] {standard_task_runner.py:80} INFO - Job 200: Subtask generate_data
+[2022-09-14 14:53:10,342] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T14:43:05.080519+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-14 14:53:10,403] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-14T14:43:05.080519+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-14T14:43:05.080519+00:00
+[2022-09-14 14:53:10,456] {logging_mixin.py:115} INFO - Time to generate customer profiles table: 0.052s
+[2022-09-14 14:53:10,508] {logging_mixin.py:115} INFO - Time to generate terminal profiles table: 0.052s
+[2022-09-14 14:53:13,922] {logging_mixin.py:115} INFO - Time to associate terminals to customers: 3.4s
+[2022-09-14 14:54:10,863] {local_task_job.py:220} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2022-09-14 14:54:10,868] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 16841. PIDs of all processes in the group: [16841]
+[2022-09-14 14:54:10,868] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 16841
+[2022-09-14 14:54:10,868] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-14 14:55:10,883] {process_utils.py:143} WARNING - process psutil.Process(pid=16841, name='airflow task runner: preprocessing_data generate_data scheduled__2022-09-14T14:43:05.080519+00:00 200', status='running', started='14:53:10') did not respond to SIGTERM. Trying SIGKILL
+[2022-09-14 14:55:10,884] {process_utils.py:80} INFO - Sending the signal Signals.SIGKILL to group 16841
+[2022-09-14 14:55:10,898] {process_utils.py:75} INFO - Process psutil.Process(pid=16841, name='airflow task runner: preprocessing_data generate_data scheduled__2022-09-14T14:43:05.080519+00:00 200', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='14:53:10') (16841) terminated with exit code Negsignal.SIGKILL
+[2022-09-14 14:55:10,898] {standard_task_runner.py:160} ERROR - Job 200 was killed before it finished (likely due to running out of memory)

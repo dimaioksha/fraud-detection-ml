@@ -1,0 +1,351 @@
+[2022-09-15 13:55:59,341] {processor.py:153} INFO - Started process (PID=9994) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:55:59,341] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:55:59,342] {logging_mixin.py:115} INFO - [2022-09-15 13:55:59,342] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:56:01,055] {logging_mixin.py:115} INFO - [2022-09-15 13:56:01,040] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 29, in <module>
+    from utils.validate_model import validate_model
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 1, in <module>
+    from asyncio.windows_utils import pipe
+  File "/opt/conda/lib/python3.8/asyncio/windows_utils.py", line 6, in <module>
+    raise ImportError('win32 only')
+ImportError: win32 only
+[2022-09-15 13:56:01,056] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:56:01,103] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.767 seconds
+[2022-09-15 13:56:43,154] {processor.py:153} INFO - Started process (PID=10434) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:56:43,157] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:56:43,157] {logging_mixin.py:115} INFO - [2022-09-15 13:56:43,157] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:56:44,369] {logging_mixin.py:115} INFO - [2022-09-15 13:56:44,368] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 29, in <module>
+    from utils.validate_model import validate_model
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 1, in <module>
+    from asyncio.windows_utils import pipe
+  File "/opt/conda/lib/python3.8/asyncio/windows_utils.py", line 6, in <module>
+    raise ImportError('win32 only')
+ImportError: win32 only
+[2022-09-15 13:56:44,370] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:56:44,399] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.249 seconds
+[2022-09-15 13:57:14,545] {processor.py:153} INFO - Started process (PID=10777) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:14,545] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:57:14,546] {logging_mixin.py:115} INFO - [2022-09-15 13:57:14,546] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:15,545] {logging_mixin.py:115} INFO - [2022-09-15 13:57:15,544] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 29, in <module>
+    from utils.validate_model import validate_model
+  File "/home/ubuntu/fraud-detection-ml/utils/validate_model.py", line 1, in <module>
+    from asyncio.windows_utils import pipe
+  File "/opt/conda/lib/python3.8/asyncio/windows_utils.py", line 6, in <module>
+    raise ImportError('win32 only')
+ImportError: win32 only
+[2022-09-15 13:57:15,546] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:15,561] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.020 seconds
+[2022-09-15 13:57:45,800] {processor.py:153} INFO - Started process (PID=10854) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:45,801] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:57:45,801] {logging_mixin.py:115} INFO - [2022-09-15 13:57:45,801] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:46,795] {logging_mixin.py:115} INFO - [2022-09-15 13:57:46,795] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 13:57:46,797] {logging_mixin.py:115} INFO - [2022-09-15 13:57:46,797] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 13:57:46,807] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:57:46,836] {logging_mixin.py:115} INFO - [2022-09-15 13:57:46,836] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 13:57:46,847] {logging_mixin.py:115} INFO - [2022-09-15 13:57:46,846] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:47:46.846803+00:00, run_after=2022-09-15T13:57:46.846803+00:00
+[2022-09-15 13:57:46,870] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.072 seconds
+[2022-09-15 13:58:07,112] {processor.py:153} INFO - Started process (PID=11042) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:58:07,113] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:58:07,113] {logging_mixin.py:115} INFO - [2022-09-15 13:58:07,113] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:58:08,395] {logging_mixin.py:115} INFO - [2022-09-15 13:58:08,395] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 13:58:08,395] {logging_mixin.py:115} INFO - [2022-09-15 13:58:08,395] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 13:58:08,413] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:58:08,419] {logging_mixin.py:115} INFO - [2022-09-15 13:58:08,418] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 13:58:08,430] {logging_mixin.py:115} INFO - [2022-09-15 13:58:08,430] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:57:46.846803+00:00, run_after=2022-09-15T14:07:46.846803+00:00
+[2022-09-15 13:58:08,449] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.339 seconds
+[2022-09-15 13:59:49,569] {processor.py:153} INFO - Started process (PID=12374) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:59:49,571] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 13:59:49,572] {logging_mixin.py:115} INFO - [2022-09-15 13:59:49,572] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:59:50,584] {logging_mixin.py:115} INFO - [2022-09-15 13:59:50,584] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 13:59:50,585] {logging_mixin.py:115} INFO - [2022-09-15 13:59:50,584] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 13:59:50,591] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 13:59:50,600] {logging_mixin.py:115} INFO - [2022-09-15 13:59:50,599] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 13:59:50,609] {logging_mixin.py:115} INFO - [2022-09-15 13:59:50,609] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:57:46.846803+00:00, run_after=2022-09-15T14:07:46.846803+00:00
+[2022-09-15 13:59:50,621] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.056 seconds
+[2022-09-15 14:01:37,816] {processor.py:153} INFO - Started process (PID=13335) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:01:37,817] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:01:37,818] {logging_mixin.py:115} INFO - [2022-09-15 14:01:37,818] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:01:38,801] {logging_mixin.py:115} INFO - [2022-09-15 14:01:38,800] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:01:38,801] {logging_mixin.py:115} INFO - [2022-09-15 14:01:38,801] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:01:38,807] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:01:38,818] {logging_mixin.py:115} INFO - [2022-09-15 14:01:38,817] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:01:38,828] {logging_mixin.py:115} INFO - [2022-09-15 14:01:38,828] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:57:46.846803+00:00, run_after=2022-09-15T14:07:46.846803+00:00
+[2022-09-15 14:01:38,842] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.029 seconds
+[2022-09-15 14:02:12,080] {processor.py:153} INFO - Started process (PID=13760) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:02:12,080] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:02:12,081] {logging_mixin.py:115} INFO - [2022-09-15 14:02:12,081] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:02:13,094] {logging_mixin.py:115} INFO - [2022-09-15 14:02:13,094] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:02:13,095] {logging_mixin.py:115} INFO - [2022-09-15 14:02:13,095] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:02:13,101] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:02:13,111] {logging_mixin.py:115} INFO - [2022-09-15 14:02:13,111] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:02:13,121] {logging_mixin.py:115} INFO - [2022-09-15 14:02:13,121] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:57:46.846803+00:00, run_after=2022-09-15T14:07:46.846803+00:00
+[2022-09-15 14:02:13,138] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.062 seconds
+[2022-09-15 14:09:32,593] {processor.py:153} INFO - Started process (PID=14129) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:09:32,596] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:09:32,596] {logging_mixin.py:115} INFO - [2022-09-15 14:09:32,596] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:09:33,662] {logging_mixin.py:115} INFO - [2022-09-15 14:09:33,662] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:09:33,663] {logging_mixin.py:115} INFO - [2022-09-15 14:09:33,663] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:09:33,670] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:09:33,684] {logging_mixin.py:115} INFO - [2022-09-15 14:09:33,683] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:09:33,707] {logging_mixin.py:115} INFO - [2022-09-15 14:09:33,707] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T13:59:33.707522+00:00, run_after=2022-09-15T14:09:33.707522+00:00
+[2022-09-15 14:09:33,749] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.160 seconds
+[2022-09-15 14:10:06,679] {processor.py:153} INFO - Started process (PID=14609) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:10:06,680] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:10:06,680] {logging_mixin.py:115} INFO - [2022-09-15 14:10:06,680] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:10:07,991] {logging_mixin.py:115} INFO - [2022-09-15 14:10:07,991] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:10:07,992] {logging_mixin.py:115} INFO - [2022-09-15 14:10:07,991] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:10:07,997] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:10:08,019] {logging_mixin.py:115} INFO - [2022-09-15 14:10:08,019] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:10:08,045] {logging_mixin.py:115} INFO - [2022-09-15 14:10:08,045] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T14:00:08.045272+00:00, run_after=2022-09-15T14:10:08.045272+00:00
+[2022-09-15 14:10:08,064] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.388 seconds
+[2022-09-15 14:13:41,038] {processor.py:153} INFO - Started process (PID=17649) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:13:41,041] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:13:41,041] {logging_mixin.py:115} INFO - [2022-09-15 14:13:41,041] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:13:42,221] {logging_mixin.py:115} INFO - [2022-09-15 14:13:42,221] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:13:42,222] {logging_mixin.py:115} INFO - [2022-09-15 14:13:42,221] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:13:42,228] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:13:42,239] {logging_mixin.py:115} INFO - [2022-09-15 14:13:42,239] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:13:42,250] {logging_mixin.py:115} INFO - [2022-09-15 14:13:42,250] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T14:10:37.967001+00:00, run_after=2022-09-15T14:20:37.967001+00:00
+[2022-09-15 14:13:42,265] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.231 seconds
+[2022-09-15 14:42:19,606] {processor.py:153} INFO - Started process (PID=33918) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:42:19,609] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:42:19,609] {logging_mixin.py:115} INFO - [2022-09-15 14:42:19,609] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:42:20,668] {logging_mixin.py:115} INFO - [2022-09-15 14:42:20,668] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:42:20,668] {logging_mixin.py:115} INFO - [2022-09-15 14:42:20,668] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:42:20,675] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:42:20,684] {logging_mixin.py:115} INFO - [2022-09-15 14:42:20,684] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:42:20,694] {logging_mixin.py:115} INFO - [2022-09-15 14:42:20,694] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T14:32:20.694572+00:00, run_after=2022-09-15T14:42:20.694572+00:00
+[2022-09-15 14:42:20,713] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.110 seconds
+[2022-09-15 14:44:37,123] {processor.py:153} INFO - Started process (PID=36307) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:44:37,125] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 14:44:37,125] {logging_mixin.py:115} INFO - [2022-09-15 14:44:37,125] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:44:38,226] {logging_mixin.py:115} INFO - [2022-09-15 14:44:38,226] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 14:44:38,226] {logging_mixin.py:115} INFO - [2022-09-15 14:44:38,226] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 14:44:38,234] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 14:44:38,245] {logging_mixin.py:115} INFO - [2022-09-15 14:44:38,244] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 14:44:38,257] {logging_mixin.py:115} INFO - [2022-09-15 14:44:38,257] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T14:34:38.256852+00:00, run_after=2022-09-15T14:44:38.256852+00:00
+[2022-09-15 14:44:38,271] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.152 seconds
+[2022-09-15 15:07:05,589] {processor.py:153} INFO - Started process (PID=38513) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:07:05,592] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:07:05,592] {logging_mixin.py:115} INFO - [2022-09-15 15:07:05,592] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:07:06,724] {logging_mixin.py:115} INFO - [2022-09-15 15:07:06,724] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:07:06,724] {logging_mixin.py:115} INFO - [2022-09-15 15:07:06,724] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:07:06,730] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:07:06,741] {logging_mixin.py:115} INFO - [2022-09-15 15:07:06,740] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:07:06,751] {logging_mixin.py:115} INFO - [2022-09-15 15:07:06,750] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T14:57:06.750788+00:00, run_after=2022-09-15T15:07:06.750788+00:00
+[2022-09-15 15:07:06,763] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.178 seconds
+[2022-09-15 15:09:08,639] {processor.py:153} INFO - Started process (PID=40326) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:09:08,641] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:09:08,641] {logging_mixin.py:115} INFO - [2022-09-15 15:09:08,641] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:09:09,701] {logging_mixin.py:115} INFO - [2022-09-15 15:09:09,700] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:09:09,702] {logging_mixin.py:115} INFO - [2022-09-15 15:09:09,701] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:09:09,708] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:09:09,718] {logging_mixin.py:115} INFO - [2022-09-15 15:09:09,717] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:09:09,728] {logging_mixin.py:115} INFO - [2022-09-15 15:09:09,728] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:07:39.170269+00:00, run_after=2022-09-15T15:17:39.170269+00:00
+[2022-09-15 15:09:09,740] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.105 seconds
+[2022-09-15 15:11:22,477] {processor.py:153} INFO - Started process (PID=42155) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:11:22,478] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:11:22,479] {logging_mixin.py:115} INFO - [2022-09-15 15:11:22,479] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:11:23,484] {logging_mixin.py:115} INFO - [2022-09-15 15:11:23,484] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:11:23,484] {logging_mixin.py:115} INFO - [2022-09-15 15:11:23,484] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:11:23,490] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:11:23,499] {logging_mixin.py:115} INFO - [2022-09-15 15:11:23,499] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:11:23,509] {logging_mixin.py:115} INFO - [2022-09-15 15:11:23,509] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:07:39.170269+00:00, run_after=2022-09-15T15:17:39.170269+00:00
+[2022-09-15 15:11:23,523] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.050 seconds
+[2022-09-15 15:27:23,490] {processor.py:153} INFO - Started process (PID=44353) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:27:23,492] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:27:23,492] {logging_mixin.py:115} INFO - [2022-09-15 15:27:23,492] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:27:24,562] {logging_mixin.py:115} INFO - [2022-09-15 15:27:24,562] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:27:24,563] {logging_mixin.py:115} INFO - [2022-09-15 15:27:24,562] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:27:24,569] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:27:24,581] {logging_mixin.py:115} INFO - [2022-09-15 15:27:24,580] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:27:24,592] {logging_mixin.py:115} INFO - [2022-09-15 15:27:24,592] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:17:24.591888+00:00, run_after=2022-09-15T15:27:24.591888+00:00
+[2022-09-15 15:27:24,608] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.121 seconds
+[2022-09-15 15:42:20,226] {processor.py:153} INFO - Started process (PID=46383) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:42:20,228] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:42:20,228] {logging_mixin.py:115} INFO - [2022-09-15 15:42:20,228] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:42:21,331] {logging_mixin.py:115} INFO - [2022-09-15 15:42:21,330] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:42:21,332] {logging_mixin.py:115} INFO - [2022-09-15 15:42:21,331] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:42:21,338] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:42:21,349] {logging_mixin.py:115} INFO - [2022-09-15 15:42:21,349] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:42:21,360] {logging_mixin.py:115} INFO - [2022-09-15 15:42:21,360] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:32:21.360291+00:00, run_after=2022-09-15T15:42:21.360291+00:00
+[2022-09-15 15:42:21,375] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.153 seconds
+[2022-09-15 15:44:24,525] {processor.py:153} INFO - Started process (PID=47477) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:44:24,527] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:44:24,528] {logging_mixin.py:115} INFO - [2022-09-15 15:44:24,527] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:44:25,681] {logging_mixin.py:115} INFO - [2022-09-15 15:44:25,680] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:44:25,681] {logging_mixin.py:115} INFO - [2022-09-15 15:44:25,681] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:44:25,687] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:44:25,698] {logging_mixin.py:115} INFO - [2022-09-15 15:44:25,698] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:44:25,708] {logging_mixin.py:115} INFO - [2022-09-15 15:44:25,708] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:42:53.618883+00:00, run_after=2022-09-15T15:52:53.618883+00:00
+[2022-09-15 15:44:25,721] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.200 seconds
+[2022-09-15 15:46:37,769] {processor.py:153} INFO - Started process (PID=48568) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:46:37,772] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:46:37,772] {logging_mixin.py:115} INFO - [2022-09-15 15:46:37,772] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:46:38,806] {logging_mixin.py:115} INFO - [2022-09-15 15:46:38,806] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:46:38,806] {logging_mixin.py:115} INFO - [2022-09-15 15:46:38,806] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:46:38,813] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:46:38,822] {logging_mixin.py:115} INFO - [2022-09-15 15:46:38,822] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:46:38,832] {logging_mixin.py:115} INFO - [2022-09-15 15:46:38,832] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:42:53.618883+00:00, run_after=2022-09-15T15:52:53.618883+00:00
+[2022-09-15 15:46:38,859] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.093 seconds
+[2022-09-15 15:50:26,089] {processor.py:153} INFO - Started process (PID=50237) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:50:26,091] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:50:26,092] {logging_mixin.py:115} INFO - [2022-09-15 15:50:26,092] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:50:27,149] {logging_mixin.py:115} INFO - [2022-09-15 15:50:27,149] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:50:27,149] {logging_mixin.py:115} INFO - [2022-09-15 15:50:27,149] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:50:27,156] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:50:27,167] {logging_mixin.py:115} INFO - [2022-09-15 15:50:27,167] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:50:27,179] {logging_mixin.py:115} INFO - [2022-09-15 15:50:27,179] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:42:53.618883+00:00, run_after=2022-09-15T15:52:53.618883+00:00
+[2022-09-15 15:50:27,195] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.109 seconds
+[2022-09-15 15:53:25,785] {processor.py:153} INFO - Started process (PID=51875) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:53:25,787] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:53:25,788] {logging_mixin.py:115} INFO - [2022-09-15 15:53:25,788] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:53:26,909] {logging_mixin.py:115} INFO - [2022-09-15 15:53:26,908] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:53:26,909] {logging_mixin.py:115} INFO - [2022-09-15 15:53:26,909] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:53:26,916] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:53:26,927] {logging_mixin.py:115} INFO - [2022-09-15 15:53:26,926] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:53:26,938] {logging_mixin.py:115} INFO - [2022-09-15 15:53:26,938] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:43:26.938651+00:00, run_after=2022-09-15T15:53:26.938651+00:00
+[2022-09-15 15:53:26,952] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.170 seconds
+[2022-09-15 15:55:34,448] {processor.py:153} INFO - Started process (PID=52969) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:55:34,450] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:55:34,451] {logging_mixin.py:115} INFO - [2022-09-15 15:55:34,451] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:55:35,484] {logging_mixin.py:115} INFO - [2022-09-15 15:55:35,484] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:55:35,484] {logging_mixin.py:115} INFO - [2022-09-15 15:55:35,484] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:55:35,491] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:55:35,501] {logging_mixin.py:115} INFO - [2022-09-15 15:55:35,500] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:55:35,511] {logging_mixin.py:115} INFO - [2022-09-15 15:55:35,511] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:54:00.119244+00:00, run_after=2022-09-15T16:04:00.119244+00:00
+[2022-09-15 15:55:35,525] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.080 seconds
+[2022-09-15 15:57:37,789] {processor.py:153} INFO - Started process (PID=54065) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:57:37,791] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 15:57:37,792] {logging_mixin.py:115} INFO - [2022-09-15 15:57:37,792] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:57:38,800] {logging_mixin.py:115} INFO - [2022-09-15 15:57:38,800] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 15:57:38,801] {logging_mixin.py:115} INFO - [2022-09-15 15:57:38,800] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 15:57:38,807] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 15:57:38,816] {logging_mixin.py:115} INFO - [2022-09-15 15:57:38,816] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 15:57:38,826] {logging_mixin.py:115} INFO - [2022-09-15 15:57:38,825] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:54:00.119244+00:00, run_after=2022-09-15T16:04:00.119244+00:00
+[2022-09-15 15:57:38,842] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.056 seconds
+[2022-09-15 16:01:49,303] {processor.py:153} INFO - Started process (PID=55766) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:01:49,305] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:01:49,305] {logging_mixin.py:115} INFO - [2022-09-15 16:01:49,305] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:01:50,318] {logging_mixin.py:115} INFO - [2022-09-15 16:01:50,318] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:01:50,319] {logging_mixin.py:115} INFO - [2022-09-15 16:01:50,319] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:01:50,324] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:01:50,333] {logging_mixin.py:115} INFO - [2022-09-15 16:01:50,333] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:01:50,343] {logging_mixin.py:115} INFO - [2022-09-15 16:01:50,343] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:54:00.119244+00:00, run_after=2022-09-15T16:04:00.119244+00:00
+[2022-09-15 16:01:50,356] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.057 seconds
+[2022-09-15 16:04:57,239] {processor.py:153} INFO - Started process (PID=57402) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:04:57,241] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:04:57,241] {logging_mixin.py:115} INFO - [2022-09-15 16:04:57,241] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:04:58,253] {logging_mixin.py:115} INFO - [2022-09-15 16:04:58,253] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:04:58,253] {logging_mixin.py:115} INFO - [2022-09-15 16:04:58,253] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:04:58,260] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:04:58,271] {logging_mixin.py:115} INFO - [2022-09-15 16:04:58,271] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:04:58,281] {logging_mixin.py:115} INFO - [2022-09-15 16:04:58,281] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T15:54:58.281582+00:00, run_after=2022-09-15T16:04:58.281582+00:00
+[2022-09-15 16:04:58,311] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.076 seconds
+[2022-09-15 16:07:31,816] {processor.py:153} INFO - Started process (PID=58634) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:07:31,818] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:07:31,819] {logging_mixin.py:115} INFO - [2022-09-15 16:07:31,818] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:07:32,828] {logging_mixin.py:115} INFO - [2022-09-15 16:07:32,828] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:07:32,829] {logging_mixin.py:115} INFO - [2022-09-15 16:07:32,828] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:07:32,835] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:07:32,845] {logging_mixin.py:115} INFO - [2022-09-15 16:07:32,844] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:07:32,855] {logging_mixin.py:115} INFO - [2022-09-15 16:07:32,855] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:05:32.040538+00:00, run_after=2022-09-15T16:15:32.040538+00:00
+[2022-09-15 16:07:32,866] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.054 seconds
+[2022-09-15 16:09:38,876] {processor.py:153} INFO - Started process (PID=60112) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:09:38,879] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:09:38,879] {logging_mixin.py:115} INFO - [2022-09-15 16:09:38,879] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:09:39,884] {logging_mixin.py:115} INFO - [2022-09-15 16:09:39,883] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:09:39,884] {logging_mixin.py:115} INFO - [2022-09-15 16:09:39,884] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:09:39,891] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:09:39,902] {logging_mixin.py:115} INFO - [2022-09-15 16:09:39,902] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:09:39,912] {logging_mixin.py:115} INFO - [2022-09-15 16:09:39,912] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:05:32.040538+00:00, run_after=2022-09-15T16:15:32.040538+00:00
+[2022-09-15 16:09:39,928] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.056 seconds
+[2022-09-15 16:13:02,712] {processor.py:153} INFO - Started process (PID=62830) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:13:02,714] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:13:02,715] {logging_mixin.py:115} INFO - [2022-09-15 16:13:02,715] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:13:03,731] {logging_mixin.py:115} INFO - [2022-09-15 16:13:03,730] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:13:03,731] {logging_mixin.py:115} INFO - [2022-09-15 16:13:03,731] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:13:03,738] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:13:03,759] {logging_mixin.py:115} INFO - [2022-09-15 16:13:03,759] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:13:03,788] {logging_mixin.py:115} INFO - [2022-09-15 16:13:03,788] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:05:32.040538+00:00, run_after=2022-09-15T16:15:32.040538+00:00
+[2022-09-15 16:13:03,812] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.104 seconds
+[2022-09-15 16:15:30,470] {processor.py:153} INFO - Started process (PID=64059) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:15:30,475] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:15:30,475] {logging_mixin.py:115} INFO - [2022-09-15 16:15:30,475] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:15:31,492] {logging_mixin.py:115} INFO - [2022-09-15 16:15:31,492] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:15:31,493] {logging_mixin.py:115} INFO - [2022-09-15 16:15:31,492] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:15:31,498] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:15:31,507] {logging_mixin.py:115} INFO - [2022-09-15 16:15:31,507] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:15:31,517] {logging_mixin.py:115} INFO - [2022-09-15 16:15:31,517] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:05:32.040538+00:00, run_after=2022-09-15T16:15:32.040538+00:00
+[2022-09-15 16:15:31,536] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.071 seconds
+[2022-09-15 16:17:12,564] {processor.py:153} INFO - Started process (PID=65226) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:17:12,566] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:17:12,567] {logging_mixin.py:115} INFO - [2022-09-15 16:17:12,567] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:17:13,565] {logging_mixin.py:115} INFO - [2022-09-15 16:17:13,564] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:17:13,565] {logging_mixin.py:115} INFO - [2022-09-15 16:17:13,565] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:17:13,571] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:17:13,580] {logging_mixin.py:115} INFO - [2022-09-15 16:17:13,580] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:17:13,590] {logging_mixin.py:115} INFO - [2022-09-15 16:17:13,590] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:15:32.040538+00:00, run_after=2022-09-15T16:25:32.040538+00:00
+[2022-09-15 16:17:13,604] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.043 seconds
+[2022-09-15 16:21:43,291] {processor.py:153} INFO - Started process (PID=68135) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:21:43,294] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:21:43,295] {logging_mixin.py:115} INFO - [2022-09-15 16:21:43,295] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:21:44,409] {logging_mixin.py:115} INFO - [2022-09-15 16:21:44,408] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:21:44,409] {logging_mixin.py:115} INFO - [2022-09-15 16:21:44,409] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:21:44,415] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:21:44,426] {logging_mixin.py:115} INFO - [2022-09-15 16:21:44,426] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:21:44,438] {logging_mixin.py:115} INFO - [2022-09-15 16:21:44,438] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:15:32.040538+00:00, run_after=2022-09-15T16:25:32.040538+00:00
+[2022-09-15 16:21:44,453] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.165 seconds
+[2022-09-15 16:24:28,136] {processor.py:153} INFO - Started process (PID=69834) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:24:28,138] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:24:28,138] {logging_mixin.py:115} INFO - [2022-09-15 16:24:28,138] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:24:29,241] {logging_mixin.py:115} INFO - [2022-09-15 16:24:29,241] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:24:29,242] {logging_mixin.py:115} INFO - [2022-09-15 16:24:29,242] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:24:29,248] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:24:29,259] {logging_mixin.py:115} INFO - [2022-09-15 16:24:29,259] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:24:29,270] {logging_mixin.py:115} INFO - [2022-09-15 16:24:29,269] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:15:32.040538+00:00, run_after=2022-09-15T16:25:32.040538+00:00
+[2022-09-15 16:24:29,283] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.150 seconds
+[2022-09-15 16:28:00,808] {processor.py:153} INFO - Started process (PID=72808) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:28:00,811] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:28:00,811] {logging_mixin.py:115} INFO - [2022-09-15 16:28:00,811] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:28:01,832] {logging_mixin.py:115} INFO - [2022-09-15 16:28:01,831] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:28:01,832] {logging_mixin.py:115} INFO - [2022-09-15 16:28:01,832] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:28:01,838] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:28:01,848] {logging_mixin.py:115} INFO - [2022-09-15 16:28:01,847] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:28:01,857] {logging_mixin.py:115} INFO - [2022-09-15 16:28:01,857] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:25:32.040538+00:00, run_after=2022-09-15T16:35:32.040538+00:00
+[2022-09-15 16:28:01,870] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.065 seconds
+[2022-09-15 16:30:29,048] {processor.py:153} INFO - Started process (PID=74067) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:30:29,051] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:30:29,051] {logging_mixin.py:115} INFO - [2022-09-15 16:30:29,051] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:30:30,185] {logging_mixin.py:115} INFO - [2022-09-15 16:30:30,185] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:30:30,186] {logging_mixin.py:115} INFO - [2022-09-15 16:30:30,186] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:30:30,192] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:30:30,203] {logging_mixin.py:115} INFO - [2022-09-15 16:30:30,203] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:30:30,214] {logging_mixin.py:115} INFO - [2022-09-15 16:30:30,214] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:25:32.040538+00:00, run_after=2022-09-15T16:35:32.040538+00:00
+[2022-09-15 16:30:30,234] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.191 seconds
+[2022-09-15 16:31:22,941] {processor.py:153} INFO - Started process (PID=75505) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:31:22,943] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-15 16:31:22,943] {logging_mixin.py:115} INFO - [2022-09-15 16:31:22,943] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:31:24,031] {logging_mixin.py:115} INFO - [2022-09-15 16:31:24,030] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:31:24,031] {logging_mixin.py:115} INFO - [2022-09-15 16:31:24,031] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:31:24,038] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-15 16:31:24,049] {logging_mixin.py:115} INFO - [2022-09-15 16:31:24,049] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-15 16:31:24,060] {logging_mixin.py:115} INFO - [2022-09-15 16:31:24,060] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-15T16:25:32.040538+00:00, run_after=2022-09-15T16:35:32.040538+00:00
+[2022-09-15 16:31:24,074] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.137 seconds

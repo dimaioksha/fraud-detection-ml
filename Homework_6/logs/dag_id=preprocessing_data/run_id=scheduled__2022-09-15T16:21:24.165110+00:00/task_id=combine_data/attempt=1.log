@@ -1,0 +1,73 @@
+[2022-09-15 16:31:56,266] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-15T16:21:24.165110+00:00 [queued]>
+[2022-09-15 16:31:56,271] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-15T16:21:24.165110+00:00 [queued]>
+[2022-09-15 16:31:56,271] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 16:31:56,271] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-15 16:31:56,271] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 16:31:56,287] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): combine_data> on 2022-09-15 16:21:24.165110+00:00
+[2022-09-15 16:31:56,294] {standard_task_runner.py:52} INFO - Started process 75745 to run task
+[2022-09-15 16:31:56,298] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'combine_data', 'scheduled__2022-09-15T16:21:24.165110+00:00', '--job-id', '308', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpi8m5pphv', '--error-file', '/tmp/tmp6mp1unp0']
+[2022-09-15 16:31:56,299] {standard_task_runner.py:80} INFO - Job 308: Subtask combine_data
+[2022-09-15 16:31:56,343] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-15T16:21:24.165110+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-15 16:31:56,386] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=combine_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-15T16:21:24.165110+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-15T16:21:24.165110+00:00
+[2022-09-15 16:31:56,388] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-15 16:32:08,264] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-15 16:32:20,572] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 75745. PIDs of all processes in the group: [75746, 75745]
+[2022-09-15 16:32:20,573] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 75745
+[2022-09-15 16:32:20,573] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-15 16:32:20,573] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-15 16:32:20,576] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2022-09-15 16:32:20,576] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/combine_data.py", line 31, in combine_data
+    result_df.write.format("parquet").mode("overwrite").save(
+  File "/usr/lib/spark/python/pyspark/sql/readwriter.py", line 830, in save
+    self._jwrite.save(path)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 128, in deco
+    return f(*a, **kw)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o102.save
+[2022-09-15 16:32:20,588] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=combine_data, execution_date=20220915T162124, start_date=20220915T163156, end_date=20220915T163220
+[2022-09-15 16:32:20,607] {standard_task_runner.py:92} ERROR - Failed to execute job 308 for task combine_data (An error occurred while calling o102.save; 75745)
+[2022-09-15 16:32:21,075] {process_utils.py:75} INFO - Process psutil.Process(pid=75745, status='terminated', exitcode=1, started='16:31:55') (75745) terminated with exit code 1
+[2022-09-15 16:32:21,369] {process_utils.py:75} INFO - Process psutil.Process(pid=75746, status='terminated', started='16:31:55') (75746) terminated with exit code None

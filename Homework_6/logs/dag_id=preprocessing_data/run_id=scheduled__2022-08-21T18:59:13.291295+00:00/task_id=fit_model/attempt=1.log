@@ -1,0 +1,26 @@
+[2022-08-21 19:15:25,794] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-21T18:59:13.291295+00:00 [queued]>
+[2022-08-21 19:15:25,800] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-21T18:59:13.291295+00:00 [queued]>
+[2022-08-21 19:15:25,801] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:15:25,801] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-21 19:15:25,801] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:15:25,816] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-21 18:59:13.291295+00:00
+[2022-08-21 19:15:25,819] {standard_task_runner.py:52} INFO - Started process 22488 to run task
+[2022-08-21 19:15:25,823] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'scheduled__2022-08-21T18:59:13.291295+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpcfe1szg2', '--error-file', '/tmp/tmpbga9_86z']
+[2022-08-21 19:15:25,824] {standard_task_runner.py:80} INFO - Job 15: Subtask fit_model
+[2022-08-21 19:15:26,000] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-21T18:59:13.291295+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-21 19:15:26,052] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-21T18:59:13.291295+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-21T18:59:13.291295+00:00
+[2022-08-21 19:15:26,053] {train_model.py:17} INFO - GOT INTO TRAIN FUNCTION
+[2022-08-21 19:15:26,058] {train_model.py:20} INFO - PATH_TO_CLEANED_DATA: None
+[2022-08-21 19:15:26,058] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-21 19:15:26,064] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220821T185913, start_date=20220821T191525, end_date=20220821T191526
+[2022-08-21 19:15:26,114] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-21 19:15:26,209] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

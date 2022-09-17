@@ -324,7 +324,7 @@ def add_frauds(customer_profiles_table, terminal_profiles_table, transactions_df
 def main():
     DIR_OUTPUT = "./output_simulation/"
     os.makedirs(DIR_OUTPUT, exist_ok=True)
-    i = int(sys.argv[1])
+    i = np.random.randint(low=0, high=100000)
     start_time = time.time()
     (
         customer_profiles_table,
@@ -366,6 +366,56 @@ def main():
         f"{os.path.abspath(full_path)}",
         cleanup=True,
     )
+
+
+# для обратной совместимости с старыми дз сделаем alias на нашу функцию main
+def generate_data(**kwargs):
+    DIR_OUTPUT = "./output_simulation/"
+    os.makedirs(DIR_OUTPUT, exist_ok=True)
+    i = np.random.randint(low=0, high=100000)
+    start_time = time.time()
+    (
+        customer_profiles_table,
+        terminal_profiles_table,
+        transactions_df,
+    ) = generate_dataset(
+        n_customers=500,
+        n_terminals=1000,
+        nb_days=365,
+        start_date="2018-04-01",
+        r=5,
+        r_seed=i,
+    )
+    transactions_df = add_frauds(
+        customer_profiles_table, terminal_profiles_table, transactions_df
+    )
+
+    # transactions_df = pd.DataFrame({'a': [0, 1, 2, 3], 'b': ['a', 'b', 'c', 'd']})
+    end_time = time.time()
+    delta = end_time - start_time
+    str_time = time.strftime("%H:%M:%S", time.gmtime(delta))
+
+    hdfs_url = os.getenv(
+        "HDFS_NAMENODE_URL",
+        "http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870",
+    )
+    client = Client(hdfs_url)
+
+    fileCount = client.content("/user/airflow/input_files")["fileCount"]
+
+    file_name = f"partition_{fileCount}.parquet"
+
+    full_path = os.path.join(DIR_OUTPUT, file_name)
+
+    transactions_df.to_parquet(full_path)
+
+    client.upload(
+        f"/user/airflow/input_files/{file_name}",
+        f"{os.path.abspath(full_path)}",
+        cleanup=True,
+    )
+
+    kwargs["ti"].xcom_push(key="last_index_generated_file", value=str(fileCount))
 
 
 if __name__ == "__main__":

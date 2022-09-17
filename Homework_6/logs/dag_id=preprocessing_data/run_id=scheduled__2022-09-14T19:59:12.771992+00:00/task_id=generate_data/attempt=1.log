@@ -1,0 +1,57 @@
+[2022-09-14 20:09:58,664] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T19:59:12.771992+00:00 [queued]>
+[2022-09-14 20:09:58,669] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T19:59:12.771992+00:00 [queued]>
+[2022-09-14 20:09:58,670] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 20:09:58,670] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-14 20:09:58,670] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 20:09:58,684] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-14 19:59:12.771992+00:00
+[2022-09-14 20:09:58,688] {standard_task_runner.py:52} INFO - Started process 25568 to run task
+[2022-09-14 20:09:58,692] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-14T19:59:12.771992+00:00', '--job-id', '208', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp43hojwkw', '--error-file', '/tmp/tmpz60a10p_']
+[2022-09-14 20:09:58,693] {standard_task_runner.py:80} INFO - Job 208: Subtask generate_data
+[2022-09-14 20:09:58,741] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-14T19:59:12.771992+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-14 20:09:58,794] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-14T19:59:12.771992+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-14T19:59:12.771992+00:00
+[2022-09-14 20:09:58,847] {logging_mixin.py:115} INFO - Time to generate customer profiles table: 0.051s
+[2022-09-14 20:09:58,898] {logging_mixin.py:115} INFO - Time to generate terminal profiles table: 0.051s
+[2022-09-14 20:10:02,135] {logging_mixin.py:115} INFO - Time to associate terminals to customers: 3.2s
+[2022-09-14 20:13:28,228] {logging_mixin.py:115} INFO - Time to generate transactions: 2.1e+02s
+[2022-09-14 20:13:31,181] {logging_mixin.py:115} INFO - Number of frauds from scenario 1: 2016
+[2022-09-14 20:17:14,512] {logging_mixin.py:115} INFO - Number of frauds from scenario 2: 18552
+[2022-09-14 20:18:18,516] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 25568. PIDs of all processes in the group: [25568]
+[2022-09-14 20:18:18,516] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 25568
+[2022-09-14 20:18:18,520] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-14 20:18:18,530] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/script_generation.py", line 388, in generate_data
+    transactions_df = add_frauds(
+  File "/home/ubuntu/fraud-detection-ml/utils/script_generation.py", line 313, in add_frauds
+    transactions_df.loc[index_fauds, "TX_FRAUD"] = 1
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/indexing.py", line 670, in __setitem__
+    iloc._setitem_with_indexer(indexer, value)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/indexing.py", line 1765, in _setitem_with_indexer
+    isetter(loc, value)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/indexing.py", line 1695, in isetter
+    self.obj._iset_item(loc, ser)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/frame.py", line 3096, in _iset_item
+    value = self._sanitize_column(loc, value, broadcast=False)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/frame.py", line 3741, in _sanitize_column
+    value = reindexer(value)
+  File "/opt/conda/lib/python3.8/site-packages/pandas/core/frame.py", line 3722, in reindexer
+    value = value._values.copy()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-14 20:18:18,546] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=generate_data, execution_date=20220914T195912, start_date=20220914T200958, end_date=20220914T201818
+[2022-09-14 20:18:18,558] {standard_task_runner.py:92} ERROR - Failed to execute job 208 for task generate_data (Task received SIGTERM signal; 25568)
+[2022-09-14 20:18:18,608] {process_utils.py:75} INFO - Process psutil.Process(pid=25568, status='terminated', exitcode=1, started='20:09:58') (25568) terminated with exit code 1

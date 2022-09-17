@@ -1,0 +1,70 @@
+[2022-09-15 14:09:36,361] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-15T13:47:46.846803+00:00 [queued]>
+[2022-09-15 14:09:36,365] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-15T13:47:46.846803+00:00 [queued]>
+[2022-09-15 14:09:36,365] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 14:09:36,365] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-09-15 14:09:36,365] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 14:09:36,382] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-09-15 13:47:46.846803+00:00
+[2022-09-15 14:09:36,385] {standard_task_runner.py:52} INFO - Started process 14192 to run task
+[2022-09-15 14:09:36,388] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-09-15T13:47:46.846803+00:00', '--job-id', '238', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmppyhqlkih', '--error-file', '/tmp/tmpois82o85']
+[2022-09-15 14:09:36,389] {standard_task_runner.py:80} INFO - Job 238: Subtask clean_data
+[2022-09-15 14:09:36,430] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-15T13:47:46.846803+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-15 14:09:36,487] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-15T13:47:46.846803+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-15T13:47:46.846803+00:00
+[2022-09-15 14:09:49,556] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 14192. PIDs of all processes in the group: [14193, 14192]
+[2022-09-15 14:09:49,556] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 14192
+[2022-09-15 14:09:49,556] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-15 14:09:49,556] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-15 14:09:49,571] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2022-09-15 14:09:49,572] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 53, in clean_data
+    df = spark.read.format("parquet").load(file_name)
+  File "/usr/lib/spark/python/pyspark/sql/readwriter.py", line 178, in load
+    return self._df(self._jreader.load(path))
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 128, in deco
+    return f(*a, **kw)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o62.load
+[2022-09-15 14:09:49,577] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220915T134746, start_date=20220915T140936, end_date=20220915T140949
+[2022-09-15 14:09:49,598] {standard_task_runner.py:92} ERROR - Failed to execute job 238 for task clean_data (An error occurred while calling o62.load; 14192)
+[2022-09-15 14:09:50,060] {process_utils.py:75} INFO - Process psutil.Process(pid=14192, status='terminated', exitcode=1, started='14:09:35') (14192) terminated with exit code 1

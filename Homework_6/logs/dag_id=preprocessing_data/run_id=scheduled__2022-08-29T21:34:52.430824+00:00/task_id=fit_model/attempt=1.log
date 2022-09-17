@@ -1,0 +1,29 @@
+[2022-08-29 21:45:25,938] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T21:34:52.430824+00:00 [queued]>
+[2022-08-29 21:45:25,944] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T21:34:52.430824+00:00 [queued]>
+[2022-08-29 21:45:25,944] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 21:45:25,944] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-29 21:45:25,944] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 21:45:25,968] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-29 21:34:52.430824+00:00
+[2022-08-29 21:45:25,975] {standard_task_runner.py:52} INFO - Started process 21994 to run task
+[2022-08-29 21:45:25,979] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'scheduled__2022-08-29T21:34:52.430824+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpxl_xt32_', '--error-file', '/tmp/tmpnlocvnal']
+[2022-08-29 21:45:25,980] {standard_task_runner.py:80} INFO - Job 92: Subtask fit_model
+[2022-08-29 21:45:26,040] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-29T21:34:52.430824+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 21:45:26,121] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T21:34:52.430824+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-29T21:34:52.430824+00:00
+[2022-08-29 21:45:26,124] {logging_mixin.py:115} WARNING - 2022/08/29 21:45:26 INFO mlflow.pyspark.ml: No SparkSession detected. Autologging will log pyspark.ml models contained in the default allowlist. To specify a custom allowlist, initialize a SparkSession prior to calling mlflow.pyspark.ml.autolog() and specify the path to your allowlist file via the spark.mlflow.pysparkml.autolog.logModelAllowlistFile conf.
+[2022-08-29 21:45:26,125] {train_model.py:38} INFO - GOT INTO TRAIN FUNCTION
+[2022-08-29 21:45:51,167] {logging_mixin.py:115} WARNING - 2022/08/29 21:45:51 WARNING mlflow.pyspark.ml: Model inputs contain unsupported Spark data types: [StructField(featuresFinal,VectorUDT,true)]. Model signature is not logged.
+[2022-08-29 21:46:08,185] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-08-29 21:46:11,009] {train_model.py:69} INFO - Accuracy SCORE: 0.5
+[2022-08-29 21:46:11,045] {python.py:173} INFO - Done. Returned value was: None
+[2022-08-29 21:46:11,056] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220829T213452, start_date=20220829T214525, end_date=20220829T214611
+[2022-08-29 21:46:11,097] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-29 21:46:11,109] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

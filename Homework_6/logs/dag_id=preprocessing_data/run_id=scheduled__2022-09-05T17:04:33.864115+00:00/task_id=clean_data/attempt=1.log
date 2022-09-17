@@ -1,0 +1,20 @@
+[2022-09-05 17:25:50,801] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-05T17:04:33.864115+00:00 [queued]>
+[2022-09-05 17:25:50,807] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-05T17:04:33.864115+00:00 [queued]>
+[2022-09-05 17:25:50,807] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 17:25:50,807] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-05 17:25:50,807] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 17:25:50,821] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-09-05 17:04:33.864115+00:00
+[2022-09-05 17:25:50,827] {standard_task_runner.py:52} INFO - Started process 68170 to run task
+[2022-09-05 17:25:50,831] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-09-05T17:04:33.864115+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp8pi5qjgx', '--error-file', '/tmp/tmpuk5rm0af']
+[2022-09-05 17:25:50,831] {standard_task_runner.py:80} INFO - Job 177: Subtask clean_data
+[2022-09-05 17:25:50,876] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-05T17:04:33.864115+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-05 17:25:50,926] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-05T17:04:33.864115+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-05T17:04:33.864115+00:00

@@ -1,0 +1,60 @@
+[2022-08-29 09:27:28,389] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T09:26:58.007330+00:00 [queued]>
+[2022-08-29 09:27:28,394] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T09:26:58.007330+00:00 [queued]>
+[2022-08-29 09:27:28,394] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:27:28,394] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-29 09:27:28,395] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:27:28,410] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-29 09:26:58.007330+00:00
+[2022-08-29 09:27:28,413] {standard_task_runner.py:52} INFO - Started process 14889 to run task
+[2022-08-29 09:27:28,417] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'manual__2022-08-29T09:26:58.007330+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpu0nnpyiz', '--error-file', '/tmp/tmpcpo1t_b4']
+[2022-08-29 09:27:28,417] {standard_task_runner.py:80} INFO - Job 56: Subtask fit_model
+[2022-08-29 09:27:28,461] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T09:26:58.007330+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 09:27:28,509] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T09:26:58.007330+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-29T09:26:58.007330+00:00
+[2022-08-29 09:27:28,511] {logging_mixin.py:115} WARNING - 2022/08/29 09:27:28 INFO mlflow.pyspark.ml: No SparkSession detected. Autologging will log pyspark.ml models contained in the default allowlist. To specify a custom allowlist, initialize a SparkSession prior to calling mlflow.pyspark.ml.autolog() and specify the path to your allowlist file via the spark.mlflow.pysparkml.autolog.logModelAllowlistFile conf.
+[2022-08-29 09:27:28,512] {train_model.py:37} INFO - GOT INTO TRAIN FUNCTION
+[2022-08-29 09:27:45,169] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 59, in train_model
+    lr_model = lr.fit(train_df)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 555, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 254, in patch_with_managed_run
+    result = patch_function(original, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/pyspark/ml/__init__.py", line 1100, in patched_fit
+    fit_result = fit_mlflow(original, self, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/pyspark/ml/__init__.py", line 1086, in fit_mlflow
+    spark_model = original(self, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 536, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 471, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 533, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+  File "/usr/lib/spark/python/pyspark/ml/base.py", line 129, in fit
+    return self._fit(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/wrapper.py", line 321, in _fit
+    java_model = self._fit_java(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/wrapper.py", line 318, in _fit_java
+    return self._java_obj.fit(dataset._jdf)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 134, in deco
+    raise_from(converted)
+  File "<string>", line 3, in raise_from
+pyspark.sql.utils.IllegalArgumentException: requirement failed: Column TX_FRAUD_Vectorized must be of type numeric but was actually of type struct<type:tinyint,size:int,indices:array<int>,values:array<double>>.
+[2022-08-29 09:27:45,184] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220829T092658, start_date=20220829T092728, end_date=20220829T092745
+[2022-08-29 09:27:45,200] {standard_task_runner.py:92} ERROR - Failed to execute job 56 for task fit_model (requirement failed: Column TX_FRAUD_Vectorized must be of type numeric but was actually of type struct<type:tinyint,size:int,indices:array<int>,values:array<double>>.; 14889)
+[2022-08-29 09:27:45,247] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-29 09:27:45,257] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

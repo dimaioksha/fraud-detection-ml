@@ -1,0 +1,37 @@
+[2022-09-14 20:21:18,004] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-14T20:09:46.870343+00:00 [queued]>
+[2022-09-14 20:21:18,009] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-14T20:09:46.870343+00:00 [queued]>
+[2022-09-14 20:21:18,009] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 20:21:18,009] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-14 20:21:18,009] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 20:21:18,029] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-09-14 20:09:46.870343+00:00
+[2022-09-14 20:21:18,034] {standard_task_runner.py:52} INFO - Started process 27756 to run task
+[2022-09-14 20:21:18,038] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-09-14T20:09:46.870343+00:00', '--job-id', '216', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpyqwyreju', '--error-file', '/tmp/tmppwd1wokn']
+[2022-09-14 20:21:18,038] {standard_task_runner.py:80} INFO - Job 216: Subtask clean_data
+[2022-09-14 20:21:18,095] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-14T20:09:46.870343+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-14 20:21:18,153] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-14T20:09:46.870343+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-14T20:09:46.870343+00:00
+[2022-09-14 20:21:34,855] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 84, in clean_data
+    result = pipeline.fit(df).transform(df).select("featuresFinal", "TX_FRAUD")
+  File "/usr/lib/spark/python/pyspark/ml/base.py", line 129, in fit
+    return self._fit(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/pipeline.py", line 96, in _fit
+    raise TypeError(
+TypeError: Cannot recognize a pipeline stage of type <class 'list'>.
+[2022-09-14 20:21:34,860] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220914T200946, start_date=20220914T202118, end_date=20220914T202134
+[2022-09-14 20:21:34,876] {standard_task_runner.py:92} ERROR - Failed to execute job 216 for task clean_data (Cannot recognize a pipeline stage of type <class 'list'>.; 27756)
+[2022-09-14 20:21:34,888] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-09-14 20:21:34,907] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

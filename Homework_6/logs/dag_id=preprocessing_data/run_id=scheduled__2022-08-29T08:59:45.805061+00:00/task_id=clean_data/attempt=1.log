@@ -1,0 +1,36 @@
+[2022-08-29 09:10:20,340] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-29T08:59:45.805061+00:00 [queued]>
+[2022-08-29 09:10:20,346] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-29T08:59:45.805061+00:00 [queued]>
+[2022-08-29 09:10:20,346] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:10:20,346] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-29 09:10:20,346] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:10:20,363] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-08-29 08:59:45.805061+00:00
+[2022-08-29 09:10:20,367] {standard_task_runner.py:52} INFO - Started process 9692 to run task
+[2022-08-29 09:10:20,371] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-08-29T08:59:45.805061+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmptovilz0i', '--error-file', '/tmp/tmp7fo2z7bm']
+[2022-08-29 09:10:20,371] {standard_task_runner.py:80} INFO - Job 48: Subtask clean_data
+[2022-08-29 09:10:20,431] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-08-29T08:59:45.805061+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 09:10:20,486] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T08:59:45.805061+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-29T08:59:45.805061+00:00
+[2022-08-29 09:10:20,487] {pyspark_cleaning.py:19} INFO - 
+[2022-08-29 09:10:20,487] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-08-29 09:10:20,488] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-08-29 09:10:44,143] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 77, in clean_data
+    VectorAssembler().setInputCols(["TX_FRAUD"]).setOutputCols(["TX_FRAUD_Vectorized"])
+AttributeError: 'VectorAssembler' object has no attribute 'setOutputCols'
+[2022-08-29 09:10:44,148] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220829T085945, start_date=20220829T091020, end_date=20220829T091044
+[2022-08-29 09:10:44,165] {standard_task_runner.py:92} ERROR - Failed to execute job 48 for task clean_data ('VectorAssembler' object has no attribute 'setOutputCols'; 9692)
+[2022-08-29 09:10:44,192] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-29 09:10:44,213] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

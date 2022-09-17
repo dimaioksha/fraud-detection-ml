@@ -1,0 +1,34 @@
+[2022-09-15 15:07:08,847] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-15T14:00:37.967001+00:00 [queued]>
+[2022-09-15 15:07:08,852] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-15T14:00:37.967001+00:00 [queued]>
+[2022-09-15 15:07:08,852] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 15:07:08,852] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-15 15:07:08,852] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-15 15:07:08,871] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): validate_model> on 2022-09-15 14:00:37.967001+00:00
+[2022-09-15 15:07:08,877] {standard_task_runner.py:52} INFO - Started process 38572 to run task
+[2022-09-15 15:07:08,881] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'validate_model', 'scheduled__2022-09-15T14:00:37.967001+00:00', '--job-id', '251', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp0r7sgovb', '--error-file', '/tmp/tmpm0pxewxo']
+[2022-09-15 15:07:08,881] {standard_task_runner.py:80} INFO - Job 251: Subtask validate_model
+[2022-09-15 15:07:08,927] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-15T14:00:37.967001+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-15 15:07:08,974] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=validate_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-15T14:00:37.967001+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-15T14:00:37.967001+00:00
+[2022-09-15 15:07:23,110] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:23 INFO mlflow.spark: 'runs:/d302aebf9da74a0583c6e818c6dfe81c/model' resolved as 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/model'
+[2022-09-15 15:07:23,184] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-09-15 15:07:23,785] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:23 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/model/sparkml' does not point to the current DFS.
+[2022-09-15 15:07:23,785] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:23 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/model/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-15 15:07:24,815] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:24 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/d86d4c9b-34f7-462a-92c1-fccf4738b3f3
+[2022-09-15 15:07:31,613] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:31 INFO mlflow.spark: 'runs:/d302aebf9da74a0583c6e818c6dfe81c/pipeline' resolved as 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/pipeline'
+[2022-09-15 15:07:32,210] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:32 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/pipeline/sparkml' does not point to the current DFS.
+[2022-09-15 15:07:32,211] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:32 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/d302aebf9da74a0583c6e818c6dfe81c/artifacts/pipeline/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-15 15:07:32,870] {logging_mixin.py:115} WARNING - 2022/09/15 15:07:32 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/08a32c7b-55a7-4f90-948c-9b00dd9791a8
+[2022-09-15 15:07:38,487] {validate_model.py:48} INFO - CURRENT_ROC_AUC: 0.6024327935845001
+[2022-09-15 15:07:38,488] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-15 15:07:38,496] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=validate_model, execution_date=20220915T140037, start_date=20220915T150708, end_date=20220915T150738
+[2022-09-15 15:07:38,542] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-15 15:07:38,551] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

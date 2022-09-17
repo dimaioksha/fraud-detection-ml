@@ -1,0 +1,26 @@
+[2022-09-16 13:07:17,752] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-16T12:56:09.086448+00:00 [queued]>
+[2022-09-16 13:07:17,757] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-16T12:56:09.086448+00:00 [queued]>
+[2022-09-16 13:07:17,757] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:07:17,757] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-16 13:07:17,757] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:07:17,772] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): combine_data> on 2022-09-16 12:56:09.086448+00:00
+[2022-09-16 13:07:17,777] {standard_task_runner.py:52} INFO - Started process 47998 to run task
+[2022-09-16 13:07:17,782] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'combine_data', 'scheduled__2022-09-16T12:56:09.086448+00:00', '--job-id', '350', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp795zc3xl', '--error-file', '/tmp/tmpw80ks0zg']
+[2022-09-16 13:07:17,782] {standard_task_runner.py:80} INFO - Job 350: Subtask combine_data
+[2022-09-16 13:07:17,832] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.combine_data scheduled__2022-09-16T12:56:09.086448+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-16 13:07:17,879] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=combine_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-16T12:56:09.086448+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-16T12:56:09.086448+00:00
+[2022-09-16 13:07:17,881] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-16 13:07:29,176] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-16 13:07:51,283] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-16 13:07:51,291] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=combine_data, execution_date=20220916T125609, start_date=20220916T130717, end_date=20220916T130751
+[2022-09-16 13:07:51,341] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-16 13:07:51,365] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

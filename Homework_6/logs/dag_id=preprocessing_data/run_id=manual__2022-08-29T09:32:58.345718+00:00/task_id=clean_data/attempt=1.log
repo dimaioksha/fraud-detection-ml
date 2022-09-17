@@ -1,0 +1,36 @@
+[2022-08-29 09:33:31,683] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data manual__2022-08-29T09:32:58.345718+00:00 [queued]>
+[2022-08-29 09:33:31,688] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data manual__2022-08-29T09:32:58.345718+00:00 [queued]>
+[2022-08-29 09:33:31,688] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:33:31,688] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-08-29 09:33:31,688] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 09:33:31,702] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-08-29 09:32:58.345718+00:00
+[2022-08-29 09:33:31,706] {standard_task_runner.py:52} INFO - Started process 18167 to run task
+[2022-08-29 09:33:31,709] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'manual__2022-08-29T09:32:58.345718+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp7_3g_c81', '--error-file', '/tmp/tmpnf411eeb']
+[2022-08-29 09:33:31,709] {standard_task_runner.py:80} INFO - Job 62: Subtask clean_data
+[2022-08-29 09:33:31,759] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data manual__2022-08-29T09:32:58.345718+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 09:33:31,819] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T09:32:58.345718+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-29T09:32:58.345718+00:00
+[2022-08-29 09:33:31,820] {pyspark_cleaning.py:19} INFO - 
+[2022-08-29 09:33:31,820] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-08-29 09:33:31,821] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-08-29 09:33:53,223] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/pyspark_cleaning.py", line 76, in clean_data
+    .withColumn("TX_FRAUD", result["TX_FRAUD"].cast("integer"))\
+UnboundLocalError: local variable 'result' referenced before assignment
+[2022-08-29 09:33:53,246] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220829T093258, start_date=20220829T093331, end_date=20220829T093353
+[2022-08-29 09:33:53,261] {standard_task_runner.py:92} ERROR - Failed to execute job 62 for task clean_data (local variable 'result' referenced before assignment; 18167)
+[2022-08-29 09:33:53,276] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-08-29 09:33:53,291] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

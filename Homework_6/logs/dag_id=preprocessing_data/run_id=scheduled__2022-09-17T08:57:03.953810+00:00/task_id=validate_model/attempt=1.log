@@ -1,0 +1,104 @@
+[2022-09-17 09:37:10,941] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-17T08:57:03.953810+00:00 [queued]>
+[2022-09-17 09:37:10,947] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-17T08:57:03.953810+00:00 [queued]>
+[2022-09-17 09:37:10,947] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-17 09:37:10,948] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-17 09:37:10,948] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-17 09:37:10,965] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): validate_model> on 2022-09-17 08:57:03.953810+00:00
+[2022-09-17 09:37:10,972] {standard_task_runner.py:52} INFO - Started process 29671 to run task
+[2022-09-17 09:37:10,977] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'validate_model', 'scheduled__2022-09-17T08:57:03.953810+00:00', '--job-id', '418', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpza44v9sl', '--error-file', '/tmp/tmpnvyub7j2']
+[2022-09-17 09:37:10,978] {standard_task_runner.py:80} INFO - Job 418: Subtask validate_model
+[2022-09-17 09:37:11,065] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.validate_model scheduled__2022-09-17T08:57:03.953810+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-17 09:37:11,136] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=validate_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-17T08:57:03.953810+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-17T08:57:03.953810+00:00
+[2022-09-17 09:37:30,353] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:30 INFO mlflow.spark: 'runs:/715aa455274b4a219256b46eb9bc680c/model' resolved as 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/model'
+[2022-09-17 09:37:30,468] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-09-17 09:37:31,250] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:31 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/model/sparkml' does not point to the current DFS.
+[2022-09-17 09:37:31,251] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:31 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/model/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-17 09:37:33,475] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:33 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/9933296b-0167-4bfa-9603-62139e13810c
+[2022-09-17 09:37:42,349] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:42 INFO mlflow.spark: 'runs:/715aa455274b4a219256b46eb9bc680c/pipeline' resolved as 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/pipeline'
+[2022-09-17 09:37:43,230] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:43 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/pipeline/sparkml' does not point to the current DFS.
+[2022-09-17 09:37:43,231] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:43 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/715aa455274b4a219256b46eb9bc680c/artifacts/pipeline/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-17 09:37:44,547] {logging_mixin.py:115} WARNING - 2022/09/17 09:37:44 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/e1a88169-34d8-4df2-bf8b-c3f1494e6e69
+[2022-09-17 09:38:41,079] {logging_mixin.py:115} INFO - 0         0
+1         0
+2         0
+3         0
+4         0
+         ..
+348470    0
+348471    0
+348472    0
+348473    0
+348474    0
+Name: TX_FRAUD, Length: 348475, dtype: int32
+[2022-09-17 09:38:41,080] {logging_mixin.py:115} INFO - 0         0.0
+1         0.0
+2         0.0
+3         0.0
+4         0.0
+         ... 
+348470    0.0
+348471    0.0
+348472    0.0
+348473    0.0
+348474    0.0
+Name: prediction, Length: 348475, dtype: float64
+[2022-09-17 09:38:41,081] {validate_model.py:43} INFO - y_test mean 0.07842743381878184
+[2022-09-17 09:38:41,081] {validate_model.py:44} INFO - y_pred mean 0.005386326135303824
+[2022-09-17 09:41:22,486] {validate_model.py:53} INFO - POINT ESTIMATION OF F1 IS 0.11935494915602424
+[2022-09-17 09:41:23,364] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:23 INFO mlflow.spark: 'models:/fraud-transaction-predictor/Production' resolved as 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/model'
+[2022-09-17 09:41:24,096] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:24 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/model/sparkml' does not point to the current DFS.
+[2022-09-17 09:41:24,096] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:24 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/model/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-17 09:41:24,953] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:24 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/985cfa18-e9ae-4316-8293-ab26db38da1b
+[2022-09-17 09:41:26,483] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:26 INFO mlflow.spark: 'models:/fraud-transaction-pipeline/Production' resolved as 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/pipeline'
+[2022-09-17 09:41:27,202] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:27 INFO mlflow.spark: URI 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/pipeline/sparkml' does not point to the current DFS.
+[2022-09-17 09:41:27,203] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:27 INFO mlflow.spark: File 's3://otus-bigdata-dima-ioksha/1/9dff32f633e04bafaa58b66628dcb5e6/artifacts/pipeline/sparkml' not found on DFS. Will attempt to upload the file.
+[2022-09-17 09:41:28,457] {logging_mixin.py:115} WARNING - 2022/09/17 09:41:28 INFO mlflow.spark: Copied SparkML model to /tmp/mlflow/8f65f089-28c0-4f9b-b4f9-6ae70ed02030
+[2022-09-17 09:42:20,560] {logging_mixin.py:115} INFO - 0         0
+1         0
+2         0
+3         0
+4         0
+         ..
+348470    0
+348471    0
+348472    0
+348473    0
+348474    0
+Name: TX_FRAUD, Length: 348475, dtype: int32
+[2022-09-17 09:42:20,561] {logging_mixin.py:115} INFO - 0         0.0
+1         0.0
+2         0.0
+3         0.0
+4         0.0
+         ... 
+348470    0.0
+348471    0.0
+348472    0.0
+348473    0.0
+348474    0.0
+Name: prediction, Length: 348475, dtype: float64
+[2022-09-17 09:42:20,561] {validate_model.py:43} INFO - y_test mean 0.07842743381878184
+[2022-09-17 09:42:20,562] {validate_model.py:44} INFO - y_pred mean 0.0
+[2022-09-17 09:44:42,466] {validate_model.py:53} INFO - POINT ESTIMATION OF F1 IS 0.0
+[2022-09-17 09:44:43,126] {validate_model.py:103} INFO - Mean 0.119267291677604 and std of considering model 0.0025536500300763266
+[2022-09-17 09:44:43,127] {validate_model.py:104} INFO - Mean 0.0 and std of best model 0.0
+[2022-09-17 09:44:43,127] {validate_model.py:107} INFO - NEW MODEL IS BETTER
+[2022-09-17 09:44:43,156] {logging_mixin.py:115} WARNING - Registered model 'fraud-transaction-predictor' already exists. Creating a new version of this model...
+[2022-09-17 09:44:43,272] {logging_mixin.py:115} WARNING - 2022/09/17 09:44:43 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: fraud-transaction-predictor, version 2
+[2022-09-17 09:44:43,273] {logging_mixin.py:115} WARNING - Created version '2' of model 'fraud-transaction-predictor'.
+[2022-09-17 09:44:43,306] {logging_mixin.py:115} WARNING - Registered model 'fraud-transaction-pipeline' already exists. Creating a new version of this model...
+[2022-09-17 09:44:43,409] {logging_mixin.py:115} WARNING - 2022/09/17 09:44:43 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: fraud-transaction-pipeline, version 2
+[2022-09-17 09:44:43,409] {logging_mixin.py:115} WARNING - Created version '2' of model 'fraud-transaction-pipeline'.
+[2022-09-17 09:44:43,606] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-17 09:44:43,619] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=validate_model, execution_date=20220917T085703, start_date=20220917T093710, end_date=20220917T094443
+[2022-09-17 09:44:43,679] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-17 09:44:43,700] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

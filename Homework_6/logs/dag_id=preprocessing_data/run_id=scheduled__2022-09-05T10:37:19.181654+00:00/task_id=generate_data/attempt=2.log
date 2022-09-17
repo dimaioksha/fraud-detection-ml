@@ -1,0 +1,33 @@
+[2022-09-05 10:52:26,592] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T10:37:19.181654+00:00 [queued]>
+[2022-09-05 10:52:26,597] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T10:37:19.181654+00:00 [queued]>
+[2022-09-05 10:52:26,597] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 10:52:26,597] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-09-05 10:52:26,597] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 10:52:26,613] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-05 10:37:19.181654+00:00
+[2022-09-05 10:52:26,617] {standard_task_runner.py:52} INFO - Started process 13229 to run task
+[2022-09-05 10:52:26,623] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-05T10:37:19.181654+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpiy3yqper', '--error-file', '/tmp/tmp_c86o426']
+[2022-09-05 10:52:26,623] {standard_task_runner.py:80} INFO - Job 102: Subtask generate_data
+[2022-09-05 10:52:26,678] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T10:37:19.181654+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-05 10:52:26,721] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-05T10:37:19.181654+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-05T10:37:19.181654+00:00
+[2022-09-05 10:52:26,723] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/script_generation.py", line 374, in generate_data
+    i = int(sys.argv[1])
+ValueError: invalid literal for int() with base 10: 'tasks'
+[2022-09-05 10:52:26,726] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=generate_data, execution_date=20220905T103719, start_date=20220905T105226, end_date=20220905T105226
+[2022-09-05 10:52:26,737] {standard_task_runner.py:92} ERROR - Failed to execute job 102 for task generate_data (invalid literal for int() with base 10: 'tasks'; 13229)
+[2022-09-05 10:52:26,753] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-09-05 10:52:26,785] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

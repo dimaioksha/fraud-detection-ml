@@ -1,0 +1,36 @@
+[2022-09-05 16:03:32,244] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T15:53:28.830368+00:00 [queued]>
+[2022-09-05 16:03:32,249] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T15:53:28.830368+00:00 [queued]>
+[2022-09-05 16:03:32,250] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 16:03:32,250] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-05 16:03:32,250] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-05 16:03:32,265] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): generate_data> on 2022-09-05 15:53:28.830368+00:00
+[2022-09-05 16:03:32,271] {standard_task_runner.py:52} INFO - Started process 51277 to run task
+[2022-09-05 16:03:32,275] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'generate_data', 'scheduled__2022-09-05T15:53:28.830368+00:00', '--job-id', '155', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpo0deryj2', '--error-file', '/tmp/tmp5bpfz7gc']
+[2022-09-05 16:03:32,275] {standard_task_runner.py:80} INFO - Job 155: Subtask generate_data
+[2022-09-05 16:03:32,322] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.generate_data scheduled__2022-09-05T15:53:28.830368+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-05 16:03:32,379] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=generate_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-05T15:53:28.830368+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-05T15:53:28.830368+00:00
+[2022-09-05 16:03:32,431] {logging_mixin.py:115} INFO - Time to generate customer profiles table: 0.05s
+[2022-09-05 16:03:32,480] {logging_mixin.py:115} INFO - Time to generate terminal profiles table: 0.049s
+[2022-09-05 16:03:35,206] {logging_mixin.py:115} INFO - Time to associate terminals to customers: 2.7s
+[2022-09-05 16:07:03,704] {logging_mixin.py:115} INFO - Time to generate transactions: 2.1e+02s
+[2022-09-05 16:07:06,661] {logging_mixin.py:115} INFO - Number of frauds from scenario 1: 1985
+[2022-09-05 16:10:41,515] {logging_mixin.py:115} INFO - Number of frauds from scenario 2: 18941
+[2022-09-05 16:14:49,538] {logging_mixin.py:115} INFO - Number of frauds from scenario 3: 9629
+[2022-09-05 16:14:49,539] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-05 16:14:49,539] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-05 16:14:52,468] {client.py:558} INFO - Uploading '/home/ubuntu/fraud-detection-ml/airflow/output_simulation/partition_53.parquet' to '/user/airflow/input_files/partition_53.parquet'.
+[2022-09-05 16:14:52,468] {client.py:1123} INFO - Listing '/user/airflow/input_files/partition_53.parquet'.
+[2022-09-05 16:14:52,473] {client.py:503} INFO - Writing to '/user/airflow/input_files/partition_53.parquet'.
+[2022-09-05 16:14:53,285] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-05 16:14:53,291] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=generate_data, execution_date=20220905T155328, start_date=20220905T160332, end_date=20220905T161453
+[2022-09-05 16:14:53,325] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-05 16:14:53,352] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

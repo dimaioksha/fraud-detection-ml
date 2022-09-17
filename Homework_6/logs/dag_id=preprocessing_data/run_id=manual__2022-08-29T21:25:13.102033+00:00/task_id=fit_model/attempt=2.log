@@ -1,0 +1,79 @@
+[2022-08-29 21:32:50,183] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T21:25:13.102033+00:00 [queued]>
+[2022-08-29 21:32:50,189] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T21:25:13.102033+00:00 [queued]>
+[2022-08-29 21:32:50,189] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 21:32:50,189] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-08-29 21:32:50,189] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-29 21:32:50,209] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-29 21:25:13.102033+00:00
+[2022-08-29 21:32:50,215] {standard_task_runner.py:52} INFO - Started process 17202 to run task
+[2022-08-29 21:32:50,219] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'manual__2022-08-29T21:25:13.102033+00:00', '--job-id', '86', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpv_7z7c46', '--error-file', '/tmp/tmpr6q8i_at']
+[2022-08-29 21:32:50,220] {standard_task_runner.py:80} INFO - Job 86: Subtask fit_model
+[2022-08-29 21:32:50,275] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model manual__2022-08-29T21:25:13.102033+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-29 21:32:50,329] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-29T21:25:13.102033+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-08-29T21:25:13.102033+00:00
+[2022-08-29 21:32:50,332] {logging_mixin.py:115} WARNING - 2022/08/29 21:32:50 INFO mlflow.pyspark.ml: No SparkSession detected. Autologging will log pyspark.ml models contained in the default allowlist. To specify a custom allowlist, initialize a SparkSession prior to calling mlflow.pyspark.ml.autolog() and specify the path to your allowlist file via the spark.mlflow.pysparkml.autolog.logModelAllowlistFile conf.
+[2022-08-29 21:32:50,333] {train_model.py:38} INFO - GOT INTO TRAIN FUNCTION
+[2022-08-29 21:32:53,044] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 17202. PIDs of all processes in the group: [17203, 17202]
+[2022-08-29 21:32:53,045] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 17202
+[2022-08-29 21:32:53,045] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-08-29 21:32:53,045] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-08-29 21:32:53,049] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2022-08-29 21:32:53,050] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 42, in train_model
+    spark = SparkSession.builder.appName("train_model").master("yarn").getOrCreate()
+  File "/usr/lib/spark/python/pyspark/sql/session.py", line 186, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/usr/lib/spark/python/pyspark/context.py", line 378, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/usr/lib/spark/python/pyspark/context.py", line 135, in __init__
+    self._do_init(master, appName, sparkHome, pyFiles, environment, batchSize, serializer,
+  File "/usr/lib/spark/python/pyspark/context.py", line 198, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/usr/lib/spark/python/pyspark/context.py", line 317, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1568, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext
+[2022-08-29 21:32:53,060] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220829T212513, start_date=20220829T213250, end_date=20220829T213253
+[2022-08-29 21:32:53,082] {standard_task_runner.py:92} ERROR - Failed to execute job 86 for task fit_model (An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext; 17202)
+[2022-08-29 21:32:53,460] {process_utils.py:75} INFO - Process psutil.Process(pid=17203, status='terminated', started='21:32:50') (17203) terminated with exit code None
+[2022-08-29 21:32:53,460] {process_utils.py:75} INFO - Process psutil.Process(pid=17202, status='terminated', exitcode=1, started='21:32:50') (17202) terminated with exit code 1

@@ -1,0 +1,25 @@
+[2022-09-16 13:52:30,141] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-16T13:40:44.553876+00:00 [queued]>
+[2022-09-16 13:52:30,146] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-16T13:40:44.553876+00:00 [queued]>
+[2022-09-16 13:52:30,147] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:52:30,147] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-16 13:52:30,147] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:52:30,164] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): clean_data> on 2022-09-16 13:40:44.553876+00:00
+[2022-09-16 13:52:30,172] {standard_task_runner.py:52} INFO - Started process 74318 to run task
+[2022-09-16 13:52:30,177] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'clean_data', 'scheduled__2022-09-16T13:40:44.553876+00:00', '--job-id', '372', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp6_qxixoa', '--error-file', '/tmp/tmprgagcx1b']
+[2022-09-16 13:52:30,177] {standard_task_runner.py:80} INFO - Job 372: Subtask clean_data
+[2022-09-16 13:52:30,236] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.clean_data scheduled__2022-09-16T13:40:44.553876+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-16 13:52:30,339] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-16T13:40:44.553876+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-16T13:40:44.553876+00:00
+[2022-09-16 13:54:03,465] {credentials.py:1094} INFO - Found credentials in environment variables.
+[2022-09-16 13:54:04,544] {python.py:173} INFO - Done. Returned value was: None
+[2022-09-16 13:54:04,553] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=preprocessing_data, task_id=clean_data, execution_date=20220916T134044, start_date=20220916T135230, end_date=20220916T135404
+[2022-09-16 13:54:04,578] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-16 13:54:04,604] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

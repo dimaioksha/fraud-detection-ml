@@ -1,0 +1,729 @@
+[2022-09-14 14:08:04,737] {processor.py:153} INFO - Started process (PID=6867) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:08:04,738] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:08:04,739] {logging_mixin.py:115} INFO - [2022-09-14 14:08:04,738] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:08:06,706] {logging_mixin.py:115} INFO - [2022-09-14 14:08:06,705] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8edaac70>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:08:10,723] {logging_mixin.py:115} INFO - [2022-09-14 14:08:10,722] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8edaab20>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:08:18,728] {logging_mixin.py:115} INFO - [2022-09-14 14:08:18,727] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8ed9c910>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:08:34,740] {logging_mixin.py:115} INFO - [2022-09-14 14:08:34,740] {timeout.py:67} ERROR - Process timed out, PID: 6867
+[2022-09-14 14:08:34,774] {logging_mixin.py:115} INFO - [2022-09-14 14:08:34,741] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fca8ed9cbb0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 160, in http_request
+    return _get_http_response_with_retries(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    retries.sleep()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 432, in sleep
+    self._sleep_backoff()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 416, in _sleep_backoff
+    time.sleep(backoff)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 68, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 6867
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 28, in <module>
+    from utils.train_model import train_model
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 31, in <module>
+    mlflow.set_experiment("fraud-transaction-prediction")
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/client.py", line 566, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 226, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 323, in get_experiment_by_name
+    raise e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 310, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoint
+    response = http_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 178, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://51.250.103.67:5001/api/2.0/mlflow/experiments/get-by-name failed with exception DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 6867
+[2022-09-14 14:08:34,774] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:08:34,793] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 30.062 seconds
+[2022-09-14 14:09:38,370] {processor.py:153} INFO - Started process (PID=7609) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:09:38,372] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:09:38,373] {logging_mixin.py:115} INFO - [2022-09-14 14:09:38,373] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:09:39,602] {logging_mixin.py:115} INFO - [2022-09-14 14:09:39,602] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8edb5df0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:09:43,608] {logging_mixin.py:115} INFO - [2022-09-14 14:09:43,607] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8edb5dc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:09:51,625] {logging_mixin.py:115} INFO - [2022-09-14 14:09:51,625] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8eda69a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:10:07,850] {logging_mixin.py:115} INFO - [2022-09-14 14:10:07,850] {connectionpool.py:810} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca8eda69d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:10:08,374] {logging_mixin.py:115} INFO - [2022-09-14 14:10:08,374] {timeout.py:67} ERROR - Process timed out, PID: 7609
+[2022-09-14 14:10:08,378] {logging_mixin.py:115} INFO - [2022-09-14 14:10:08,375] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fca8eda6eb0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 160, in http_request
+    return _get_http_response_with_retries(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  [Previous line repeated 1 more time]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    retries.sleep()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 432, in sleep
+    self._sleep_backoff()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 416, in _sleep_backoff
+    time.sleep(backoff)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 68, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 7609
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 28, in <module>
+    from utils.train_model import train_model
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 31, in <module>
+    mlflow.set_experiment("fraud-transaction-prediction")
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/client.py", line 566, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 226, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 323, in get_experiment_by_name
+    raise e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 310, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoint
+    response = http_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 178, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://51.250.103.67:5001/api/2.0/mlflow/experiments/get-by-name failed with exception DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 7609
+[2022-09-14 14:10:08,378] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:10:08,397] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 30.031 seconds
+[2022-09-14 14:10:45,411] {processor.py:153} INFO - Started process (PID=7918) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:10:45,413] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:10:45,413] {logging_mixin.py:115} INFO - [2022-09-14 14:10:45,413] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:10:47,191] {logging_mixin.py:115} INFO - [2022-09-14 14:10:47,191] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2a07c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:10:51,211] {logging_mixin.py:115} INFO - [2022-09-14 14:10:51,211] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2a0e20>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:10:59,221] {logging_mixin.py:115} INFO - [2022-09-14 14:10:59,220] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2acd30>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:11:15,239] {logging_mixin.py:115} INFO - [2022-09-14 14:11:15,239] {connectionpool.py:810} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2acca0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:11:15,415] {logging_mixin.py:115} INFO - [2022-09-14 14:11:15,414] {timeout.py:67} ERROR - Process timed out, PID: 7918
+[2022-09-14 14:11:15,418] {logging_mixin.py:115} INFO - [2022-09-14 14:11:15,415] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fc27f2acb50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 160, in http_request
+    return _get_http_response_with_retries(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  [Previous line repeated 1 more time]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    retries.sleep()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 432, in sleep
+    self._sleep_backoff()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 416, in _sleep_backoff
+    time.sleep(backoff)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 68, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 7918
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 28, in <module>
+    from utils.train_model import train_model
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 31, in <module>
+    mlflow.set_experiment("fraud-transaction-prediction")
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/client.py", line 566, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 226, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 323, in get_experiment_by_name
+    raise e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 310, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoint
+    response = http_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 178, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://51.250.103.67:5001/api/2.0/mlflow/experiments/get-by-name failed with exception DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 7918
+[2022-09-14 14:11:15,418] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:11:15,438] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 30.030 seconds
+[2022-09-14 14:11:47,512] {processor.py:153} INFO - Started process (PID=8042) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:11:47,514] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:11:47,514] {logging_mixin.py:115} INFO - [2022-09-14 14:11:47,514] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:11:48,638] {logging_mixin.py:115} INFO - [2022-09-14 14:11:48,638] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2b0a60>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:11:52,644] {logging_mixin.py:115} INFO - [2022-09-14 14:11:52,643] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2b0be0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:12:00,653] {logging_mixin.py:115} INFO - [2022-09-14 14:12:00,653] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2a0b20>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:12:16,672] {logging_mixin.py:115} INFO - [2022-09-14 14:12:16,672] {connectionpool.py:810} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2a0910>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:12:17,516] {logging_mixin.py:115} INFO - [2022-09-14 14:12:17,515] {timeout.py:67} ERROR - Process timed out, PID: 8042
+[2022-09-14 14:12:17,519] {logging_mixin.py:115} INFO - [2022-09-14 14:12:17,516] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fc27f2a0df0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 160, in http_request
+    return _get_http_response_with_retries(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  [Previous line repeated 1 more time]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    retries.sleep()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 432, in sleep
+    self._sleep_backoff()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 416, in _sleep_backoff
+    time.sleep(backoff)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 68, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 8042
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 28, in <module>
+    from utils.train_model import train_model
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 31, in <module>
+    mlflow.set_experiment("fraud-transaction-prediction")
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/client.py", line 566, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 226, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 323, in get_experiment_by_name
+    raise e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 310, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoint
+    response = http_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 178, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://51.250.103.67:5001/api/2.0/mlflow/experiments/get-by-name failed with exception DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 8042
+[2022-09-14 14:12:17,519] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:12:17,535] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 30.026 seconds
+[2022-09-14 14:12:49,633] {processor.py:153} INFO - Started process (PID=8400) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:12:49,635] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:12:49,636] {logging_mixin.py:115} INFO - [2022-09-14 14:12:49,635] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:12:50,768] {logging_mixin.py:115} INFO - [2022-09-14 14:12:50,768] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2b0a90>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:12:54,774] {logging_mixin.py:115} INFO - [2022-09-14 14:12:54,774] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2b0c10>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:13:02,783] {logging_mixin.py:115} INFO - [2022-09-14 14:13:02,783] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc27f2a2b50>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:13:42,990] {processor.py:153} INFO - Started process (PID=8722) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:13:42,992] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:13:42,993] {logging_mixin.py:115} INFO - [2022-09-14 14:13:42,993] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:13:44,729] {logging_mixin.py:115} INFO - [2022-09-14 14:13:44,729] {connectionpool.py:810} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f507d6f5bb0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:13:48,741] {logging_mixin.py:115} INFO - [2022-09-14 14:13:48,741] {connectionpool.py:810} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f507d6f5be0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:13:56,744] {logging_mixin.py:115} INFO - [2022-09-14 14:13:56,744] {connectionpool.py:810} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f507d6e8bb0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:14:12,760] {logging_mixin.py:115} INFO - [2022-09-14 14:14:12,760] {connectionpool.py:810} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f507d6e89a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=fraud-transaction-prediction
+[2022-09-14 14:14:12,995] {logging_mixin.py:115} INFO - [2022-09-14 14:14:12,994] {timeout.py:67} ERROR - Process timed out, PID: 8722
+[2022-09-14 14:14:12,998] {logging_mixin.py:115} INFO - [2022-09-14 14:14:12,995] {dagbag.py:321} ERROR - Failed to import: /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/opt/conda/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f507d6e8ee0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 160, in http_request
+    return _get_http_response_with_retries(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  [Previous line repeated 1 more time]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    retries.sleep()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 432, in sleep
+    self._sleep_backoff()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 416, in _sleep_backoff
+    time.sleep(backoff)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/utils/timeout.py", line 68, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 8722
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 318, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py", line 28, in <module>
+    from utils.train_model import train_model
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 31, in <module>
+    mlflow.set_experiment("fraud-transaction-prediction")
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/client.py", line 566, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 226, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 323, in get_experiment_by_name
+    raise e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 310, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 267, in call_endpoint
+    response = http_request(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 178, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://51.250.103.67:5001/api/2.0/mlflow/experiments/get-by-name failed with exception DagBag import timeout for /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.3.3/best-practices.html#reducing-dag-complexity, PID: 8722
+[2022-09-14 14:14:12,998] {processor.py:653} WARNING - No viable dags retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:14:13,014] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 30.027 seconds
+[2022-09-14 14:16:03,607] {processor.py:153} INFO - Started process (PID=9536) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:16:03,611] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:16:03,611] {logging_mixin.py:115} INFO - [2022-09-14 14:16:03,611] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:16:06,271] {logging_mixin.py:115} INFO - [2022-09-14 14:16:06,271] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:16:06,272] {logging_mixin.py:115} INFO - [2022-09-14 14:16:06,271] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:16:09,350] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:16:09,403] {logging_mixin.py:115} INFO - [2022-09-14 14:16:09,402] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:16:09,421] {logging_mixin.py:115} INFO - [2022-09-14 14:16:09,421] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:06:09.420907+00:00, run_after=2022-09-14T14:16:09.420907+00:00
+[2022-09-14 14:16:09,445] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 5.842 seconds
+[2022-09-14 14:28:25,268] {processor.py:153} INFO - Started process (PID=11488) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:28:25,270] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:28:25,271] {logging_mixin.py:115} INFO - [2022-09-14 14:28:25,271] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:28:26,778] {logging_mixin.py:115} INFO - [2022-09-14 14:28:26,778] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:28:26,778] {logging_mixin.py:115} INFO - [2022-09-14 14:28:26,778] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:28:26,785] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:28:26,796] {logging_mixin.py:115} INFO - [2022-09-14 14:28:26,796] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:28:26,807] {logging_mixin.py:115} INFO - [2022-09-14 14:28:26,807] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:18:26.807336+00:00, run_after=2022-09-14T14:28:26.807336+00:00
+[2022-09-14 14:28:26,824] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.559 seconds
+[2022-09-14 14:30:07,975] {processor.py:153} INFO - Started process (PID=12374) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:30:07,978] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:30:07,979] {logging_mixin.py:115} INFO - [2022-09-14 14:30:07,979] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:30:09,151] {logging_mixin.py:115} INFO - [2022-09-14 14:30:09,150] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:30:09,151] {logging_mixin.py:115} INFO - [2022-09-14 14:30:09,151] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:30:09,160] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:30:09,170] {logging_mixin.py:115} INFO - [2022-09-14 14:30:09,170] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:30:09,182] {logging_mixin.py:115} INFO - [2022-09-14 14:30:09,181] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:20:09.181706+00:00, run_after=2022-09-14T14:30:09.181706+00:00
+[2022-09-14 14:30:09,195] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.223 seconds
+[2022-09-14 14:37:09,894] {processor.py:153} INFO - Started process (PID=14258) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:37:09,896] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:37:09,897] {logging_mixin.py:115} INFO - [2022-09-14 14:37:09,896] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:37:11,646] {logging_mixin.py:115} INFO - [2022-09-14 14:37:11,646] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:37:11,647] {logging_mixin.py:115} INFO - [2022-09-14 14:37:11,646] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:37:11,659] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:37:11,674] {logging_mixin.py:115} INFO - [2022-09-14 14:37:11,673] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:37:11,696] {logging_mixin.py:115} INFO - [2022-09-14 14:37:11,696] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:30:09.181706+00:00, run_after=2022-09-14T14:40:09.181706+00:00
+[2022-09-14 14:37:11,781] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.891 seconds
+[2022-09-14 14:42:09,419] {processor.py:153} INFO - Started process (PID=15203) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:42:09,422] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:42:09,422] {logging_mixin.py:115} INFO - [2022-09-14 14:42:09,422] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:42:10,612] {logging_mixin.py:115} INFO - [2022-09-14 14:42:10,611] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:42:10,612] {logging_mixin.py:115} INFO - [2022-09-14 14:42:10,612] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:42:10,619] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:42:10,630] {logging_mixin.py:115} INFO - [2022-09-14 14:42:10,630] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:42:10,642] {logging_mixin.py:115} INFO - [2022-09-14 14:42:10,642] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:37:36.324957+00:00, run_after=2022-09-14T14:47:36.324957+00:00
+[2022-09-14 14:42:10,657] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.241 seconds
+[2022-09-14 14:53:03,405] {processor.py:153} INFO - Started process (PID=16780) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:53:03,407] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:53:03,408] {logging_mixin.py:115} INFO - [2022-09-14 14:53:03,408] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:53:05,025] {logging_mixin.py:115} INFO - [2022-09-14 14:53:05,025] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:53:05,026] {logging_mixin.py:115} INFO - [2022-09-14 14:53:05,026] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:53:05,036] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:53:05,054] {logging_mixin.py:115} INFO - [2022-09-14 14:53:05,053] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:53:05,080] {logging_mixin.py:115} INFO - [2022-09-14 14:53:05,080] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:43:05.080519+00:00, run_after=2022-09-14T14:53:05.080519+00:00
+[2022-09-14 14:53:05,196] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.795 seconds
+[2022-09-14 14:55:11,546] {processor.py:153} INFO - Started process (PID=17810) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:55:11,547] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 14:55:11,548] {logging_mixin.py:115} INFO - [2022-09-14 14:55:11,548] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:55:12,717] {logging_mixin.py:115} INFO - [2022-09-14 14:55:12,717] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 14:55:12,718] {logging_mixin.py:115} INFO - [2022-09-14 14:55:12,717] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 14:55:12,725] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 14:55:12,736] {logging_mixin.py:115} INFO - [2022-09-14 14:55:12,735] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 14:55:12,747] {logging_mixin.py:115} INFO - [2022-09-14 14:55:12,747] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T14:45:12.747161+00:00, run_after=2022-09-14T14:55:12.747161+00:00
+[2022-09-14 14:55:12,762] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.220 seconds
+[2022-09-14 19:56:58,476] {processor.py:153} INFO - Started process (PID=23479) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 19:56:58,480] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 19:56:58,480] {logging_mixin.py:115} INFO - [2022-09-14 19:56:58,480] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 19:57:00,045] {logging_mixin.py:115} INFO - [2022-09-14 19:57:00,045] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 19:57:00,046] {logging_mixin.py:115} INFO - [2022-09-14 19:57:00,046] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 19:57:00,055] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 19:57:00,090] {logging_mixin.py:115} INFO - [2022-09-14 19:57:00,078] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 19:57:00,139] {logging_mixin.py:115} INFO - [2022-09-14 19:57:00,139] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T19:47:00.139317+00:00, run_after=2022-09-14T19:57:00.139317+00:00
+[2022-09-14 19:57:00,237] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.764 seconds
+[2022-09-14 20:09:11,605] {processor.py:153} INFO - Started process (PID=24720) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:09:11,607] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:09:11,608] {logging_mixin.py:115} INFO - [2022-09-14 20:09:11,608] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:09:12,745] {logging_mixin.py:115} INFO - [2022-09-14 20:09:12,745] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:09:12,746] {logging_mixin.py:115} INFO - [2022-09-14 20:09:12,745] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:09:12,751] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:09:12,761] {logging_mixin.py:115} INFO - [2022-09-14 20:09:12,761] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:09:12,772] {logging_mixin.py:115} INFO - [2022-09-14 20:09:12,772] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T19:59:12.771992+00:00, run_after=2022-09-14T20:09:12.771992+00:00
+[2022-09-14 20:09:12,786] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.185 seconds
+[2022-09-14 20:19:23,718] {processor.py:153} INFO - Started process (PID=26638) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:19:23,721] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:19:23,722] {logging_mixin.py:115} INFO - [2022-09-14 20:19:23,722] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:19:25,748] {logging_mixin.py:115} INFO - [2022-09-14 20:19:25,748] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:19:25,749] {logging_mixin.py:115} INFO - [2022-09-14 20:19:25,749] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:19:25,769] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:19:25,802] {logging_mixin.py:115} INFO - [2022-09-14 20:19:25,802] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:19:25,842] {logging_mixin.py:115} INFO - [2022-09-14 20:19:25,842] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:09:25.842087+00:00, run_after=2022-09-14T20:19:25.842087+00:00
+[2022-09-14 20:19:25,870] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 2.155 seconds
+[2022-09-14 20:21:14,541] {processor.py:153} INFO - Started process (PID=27706) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:21:14,544] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:21:14,544] {logging_mixin.py:115} INFO - [2022-09-14 20:21:14,544] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:21:15,666] {logging_mixin.py:115} INFO - [2022-09-14 20:21:15,665] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:21:15,666] {logging_mixin.py:115} INFO - [2022-09-14 20:21:15,666] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:21:15,672] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:21:15,681] {logging_mixin.py:115} INFO - [2022-09-14 20:21:15,681] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:21:15,693] {logging_mixin.py:115} INFO - [2022-09-14 20:21:15,693] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:19:46.870343+00:00, run_after=2022-09-14T20:29:46.870343+00:00
+[2022-09-14 20:21:15,711] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.174 seconds
+[2022-09-14 20:23:16,891] {processor.py:153} INFO - Started process (PID=28879) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:23:16,893] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:23:16,894] {logging_mixin.py:115} INFO - [2022-09-14 20:23:16,894] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:23:17,939] {logging_mixin.py:115} INFO - [2022-09-14 20:23:17,939] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:23:17,940] {logging_mixin.py:115} INFO - [2022-09-14 20:23:17,940] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:23:17,946] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:23:17,956] {logging_mixin.py:115} INFO - [2022-09-14 20:23:17,955] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:23:17,966] {logging_mixin.py:115} INFO - [2022-09-14 20:23:17,966] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:23:17,979] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.092 seconds
+[2022-09-14 20:24:14,229] {processor.py:153} INFO - Started process (PID=29513) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:24:14,231] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:24:14,232] {logging_mixin.py:115} INFO - [2022-09-14 20:24:14,232] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:24:15,266] {logging_mixin.py:115} INFO - [2022-09-14 20:24:15,266] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:24:15,267] {logging_mixin.py:115} INFO - [2022-09-14 20:24:15,266] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:24:15,272] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:24:15,283] {logging_mixin.py:115} INFO - [2022-09-14 20:24:15,282] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:24:15,295] {logging_mixin.py:115} INFO - [2022-09-14 20:24:15,295] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:24:15,307] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.082 seconds
+[2022-09-14 20:25:01,159] {processor.py:153} INFO - Started process (PID=29745) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:01,161] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:25:01,162] {logging_mixin.py:115} INFO - [2022-09-14 20:25:01,162] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:02,653] {logging_mixin.py:115} INFO - [2022-09-14 20:25:02,653] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:25:02,654] {logging_mixin.py:115} INFO - [2022-09-14 20:25:02,653] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:25:02,662] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:02,678] {logging_mixin.py:115} INFO - [2022-09-14 20:25:02,678] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:25:02,699] {logging_mixin.py:115} INFO - [2022-09-14 20:25:02,698] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:25:02,832] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.677 seconds
+[2022-09-14 20:25:36,915] {processor.py:153} INFO - Started process (PID=29923) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:36,925] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:25:36,926] {logging_mixin.py:115} INFO - [2022-09-14 20:25:36,926] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:38,154] {logging_mixin.py:115} INFO - [2022-09-14 20:25:38,153] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:25:38,154] {logging_mixin.py:115} INFO - [2022-09-14 20:25:38,154] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:25:38,161] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:25:38,171] {logging_mixin.py:115} INFO - [2022-09-14 20:25:38,171] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:25:38,185] {logging_mixin.py:115} INFO - [2022-09-14 20:25:38,185] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:25:38,199] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.288 seconds
+[2022-09-14 20:26:12,205] {processor.py:153} INFO - Started process (PID=29968) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:26:12,206] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:26:12,206] {logging_mixin.py:115} INFO - [2022-09-14 20:26:12,206] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:26:13,349] {logging_mixin.py:115} INFO - [2022-09-14 20:26:13,349] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:26:13,350] {logging_mixin.py:115} INFO - [2022-09-14 20:26:13,350] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:26:13,356] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:26:13,367] {logging_mixin.py:115} INFO - [2022-09-14 20:26:13,367] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:26:13,380] {logging_mixin.py:115} INFO - [2022-09-14 20:26:13,380] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:26:13,403] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.201 seconds
+[2022-09-14 20:27:13,493] {processor.py:153} INFO - Started process (PID=30680) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:27:13,495] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:27:13,495] {logging_mixin.py:115} INFO - [2022-09-14 20:27:13,495] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:27:14,557] {logging_mixin.py:115} INFO - [2022-09-14 20:27:14,556] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:27:14,557] {logging_mixin.py:115} INFO - [2022-09-14 20:27:14,557] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:27:14,564] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:27:14,574] {logging_mixin.py:115} INFO - [2022-09-14 20:27:14,574] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:27:14,586] {logging_mixin.py:115} INFO - [2022-09-14 20:27:14,586] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:27:14,601] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.112 seconds
+[2022-09-14 20:28:42,774] {processor.py:153} INFO - Started process (PID=32025) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:28:42,776] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:28:42,777] {logging_mixin.py:115} INFO - [2022-09-14 20:28:42,777] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:28:43,901] {logging_mixin.py:115} INFO - [2022-09-14 20:28:43,900] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:28:43,901] {logging_mixin.py:115} INFO - [2022-09-14 20:28:43,901] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:28:43,907] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:28:43,917] {logging_mixin.py:115} INFO - [2022-09-14 20:28:43,917] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:28:43,930] {logging_mixin.py:115} INFO - [2022-09-14 20:28:43,930] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:28:43,948] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.178 seconds
+[2022-09-14 20:30:05,378] {processor.py:153} INFO - Started process (PID=32878) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:30:05,380] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:30:05,381] {logging_mixin.py:115} INFO - [2022-09-14 20:30:05,381] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:30:06,463] {logging_mixin.py:115} INFO - [2022-09-14 20:30:06,463] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:30:06,464] {logging_mixin.py:115} INFO - [2022-09-14 20:30:06,464] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:30:06,470] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:30:06,481] {logging_mixin.py:115} INFO - [2022-09-14 20:30:06,481] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:30:06,492] {logging_mixin.py:115} INFO - [2022-09-14 20:30:06,492] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:30:06,506] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.131 seconds
+[2022-09-14 20:31:00,143] {processor.py:153} INFO - Started process (PID=33591) to work on /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:31:00,145] {processor.py:641} INFO - Processing file /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py for tasks to queue
+[2022-09-14 20:31:00,146] {logging_mixin.py:115} INFO - [2022-09-14 20:31:00,146] {dagbag.py:508} INFO - Filling up the DagBag from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:31:01,222] {logging_mixin.py:115} INFO - [2022-09-14 20:31:01,222] {client.py:192} INFO - Instantiated <Client(url='http://rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net:9870')>.
+[2022-09-14 20:31:01,223] {logging_mixin.py:115} INFO - [2022-09-14 20:31:01,223] {client.py:305} INFO - Fetching content summary for '/user/airflow/input_files'.
+[2022-09-14 20:31:01,229] {processor.py:651} INFO - DAG(s) dict_keys(['preprocessing_data']) retrieved from /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py
+[2022-09-14 20:31:01,241] {logging_mixin.py:115} INFO - [2022-09-14 20:31:01,241] {dag.py:2420} INFO - Sync 1 DAGs
+[2022-09-14 20:31:01,253] {logging_mixin.py:115} INFO - [2022-09-14 20:31:01,253] {dag.py:2968} INFO - Setting next_dagrun for preprocessing_data to 2022-09-14T20:22:05.692527+00:00, run_after=2022-09-14T20:32:05.692527+00:00
+[2022-09-14 20:31:01,286] {processor.py:161} INFO - Processing /home/ubuntu/fraud-detection-ml/airflow/dags/model_dag.py took 1.146 seconds

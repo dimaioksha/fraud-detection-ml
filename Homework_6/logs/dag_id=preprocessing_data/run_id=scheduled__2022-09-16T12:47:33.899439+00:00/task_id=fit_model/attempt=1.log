@@ -1,0 +1,91 @@
+[2022-09-16 13:01:47,678] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-09-16T12:47:33.899439+00:00 [queued]>
+[2022-09-16 13:01:47,683] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-09-16T12:47:33.899439+00:00 [queued]>
+[2022-09-16 13:01:47,684] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:01:47,684] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2022-09-16 13:01:47,684] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-16 13:01:47,697] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-09-16 12:47:33.899439+00:00
+[2022-09-16 13:01:47,705] {standard_task_runner.py:52} INFO - Started process 45409 to run task
+[2022-09-16 13:01:47,709] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'scheduled__2022-09-16T12:47:33.899439+00:00', '--job-id', '345', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmpuuhvuidm', '--error-file', '/tmp/tmp8maj9ews']
+[2022-09-16 13:01:47,710] {standard_task_runner.py:80} INFO - Job 345: Subtask fit_model
+[2022-09-16 13:01:47,759] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model scheduled__2022-09-16T12:47:33.899439+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-09-16 13:01:47,808] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-16T12:47:33.899439+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-16T12:47:33.899439+00:00
+[2022-09-16 13:01:47,809] {train_model.py:37} INFO - GOT INTO TRAIN FUNCTION
+[2022-09-16 13:01:47,816] {train_model.py:42} INFO - Data path: /user/airflow/processed_files/slice_of_75_85.parquet
+[2022-09-16 13:03:05,828] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 45409. PIDs of all processes in the group: [45410, 45409]
+[2022-09-16 13:03:05,828] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 45409
+[2022-09-16 13:03:05,829] {taskinstance.py:1561} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-09-16 13:03:05,829] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-09-16 13:03:05,836] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/conda/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1563, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2022-09-16 13:03:05,889] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/ubuntu/fraud-detection-ml/utils/train_model.py", line 58, in train_model
+    lr_model = lr.fit(train_df)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 555, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 254, in patch_with_managed_run
+    result = patch_function(original, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/pyspark/ml/__init__.py", line 1100, in patched_fit
+    fit_result = fit_mlflow(original, self, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/pyspark/ml/__init__.py", line 1086, in fit_mlflow
+    spark_model = original(self, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 536, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 471, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/mlflow/utils/autologging_utils/safety.py", line 533, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+  File "/usr/lib/spark/python/pyspark/ml/base.py", line 129, in fit
+    return self._fit(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/wrapper.py", line 321, in _fit
+    java_model = self._fit_java(dataset)
+  File "/usr/lib/spark/python/pyspark/ml/wrapper.py", line 318, in _fit_java
+    return self._java_obj.fit(dataset._jdf)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 128, in deco
+    return f(*a, **kw)
+  File "/usr/lib/spark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o92.fit
+[2022-09-16 13:03:05,911] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_data, task_id=fit_model, execution_date=20220916T124733, start_date=20220916T130147, end_date=20220916T130305
+[2022-09-16 13:03:05,979] {standard_task_runner.py:92} ERROR - Failed to execute job 345 for task fit_model (An error occurred while calling o92.fit; 45409)
+[2022-09-16 13:03:06,001] {process_utils.py:75} INFO - Process psutil.Process(pid=45409, status='terminated', exitcode=1, started='13:01:47') (45409) terminated with exit code 1
+[2022-09-16 13:03:06,541] {process_utils.py:75} INFO - Process psutil.Process(pid=45410, status='terminated', started='13:01:47') (45410) terminated with exit code None

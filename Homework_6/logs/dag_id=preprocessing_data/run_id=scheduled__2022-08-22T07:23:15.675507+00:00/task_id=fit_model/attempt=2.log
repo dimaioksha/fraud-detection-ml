@@ -1,0 +1,22 @@
+[2022-08-22 07:39:51,963] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-22T07:23:15.675507+00:00 [queued]>
+[2022-08-22 07:39:51,969] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-22T07:23:15.675507+00:00 [queued]>
+[2022-08-22 07:39:51,969] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-22 07:39:51,969] {taskinstance.py:1377} INFO - Starting attempt 2 of 2
+[2022-08-22 07:39:51,969] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-22 07:39:51,985] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fit_model> on 2022-08-22 07:23:15.675507+00:00
+[2022-08-22 07:39:51,991] {standard_task_runner.py:52} INFO - Started process 12387 to run task
+[2022-08-22 07:39:51,996] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'preprocessing_data', 'fit_model', 'scheduled__2022-08-22T07:23:15.675507+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/model_dag.py', '--cfg-path', '/tmp/tmp_4182vky', '--error-file', '/tmp/tmpccwven14']
+[2022-08-22 07:39:51,996] {standard_task_runner.py:80} INFO - Job 42: Subtask fit_model
+[2022-08-22 07:39:52,052] {task_command.py:371} INFO - Running <TaskInstance: preprocessing_data.fit_model scheduled__2022-08-22T07:23:15.675507+00:00 [running]> on host rc1b-dataproc-m-xzxwmqcudfo0foh0.mdb.yandexcloud.net
+[2022-08-22 07:39:52,104] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=airflow@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=preprocessing_data
+AIRFLOW_CTX_TASK_ID=fit_model
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-22T07:23:15.675507+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-22T07:23:15.675507+00:00
+[2022-08-22 07:39:52,107] {logging_mixin.py:115} WARNING - 2022/08/22 07:39:52 INFO mlflow.pyspark.ml: No SparkSession detected. Autologging will log pyspark.ml models contained in the default allowlist. To specify a custom allowlist, initialize a SparkSession prior to calling mlflow.pyspark.ml.autolog() and specify the path to your allowlist file via the spark.mlflow.pysparkml.autolog.logModelAllowlistFile conf.
+[2022-08-22 07:39:52,108] {train_model.py:37} INFO - GOT INTO TRAIN FUNCTION
